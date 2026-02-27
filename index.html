@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PT Karya Setya Mustikatama – Grain, Rice &amp; Agricultural Processing, East Java</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231B6830'/><text x='16' y='22' font-family='serif' font-weight='900' font-size='9' fill='%23F0C200' text-anchor='middle'>KSMT</text></svg>">
 <meta name="description" content="Grain and rice milling specialist in Lumajang, East Java. PT KSMT processes grain (gabah), rice (beras) and onion (bawang) for B2B buyers across Indonesia.">
 <meta name="robots" content="index, follow">
 <script type="application/ld+json">
@@ -205,6 +206,33 @@ h1,h2,h3,h4{font-family:'Merriweather',Georgia,serif;line-height:1.25}
 @media(max-width:1024px){.process-steps{grid-template-columns:repeat(3,1fr)}.process-step:nth-child(3)::after{display:none}}
 @media(max-width:900px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}.about-grid,.rfq-grid{grid-template-columns:1fr;gap:40px}.products-grid,.why-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.products-grid,.why-grid,.process-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.rfq-form-box{padding:24px 20px}.mobile-cta-bar{display:block}body{padding-bottom:56px}.harvest-strip-inner{grid-template-columns:1fr 1fr}.field-divider{height:140px}}
+
+/* ── SPEC TABLE ── */
+.specs{padding:72px 0;background:#fff}
+.specs-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin:32px 0 0}
+.spec-tab{padding:12px 24px;font-size:.875rem;font-weight:700;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:.2s;background:none;border-left:none;border-right:none;border-top:none;font-family:'Open Sans',sans-serif}
+.spec-tab.active{color:var(--green);border-bottom-color:var(--green)}
+.spec-tab:hover{color:var(--green)}
+.spec-panel{display:none;padding:28px 0 4px}
+.spec-panel.active{display:block}
+.spec-table{width:100%;border-collapse:collapse;font-size:.875rem}
+.spec-table th{background:var(--green);color:#fff;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:11px 16px;text-align:left}
+.spec-table td{padding:10px 16px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table tr:nth-child(even) td{background:#F9FAF6}
+.spec-note{font-size:.8125rem;color:var(--muted);margin-top:14px;line-height:1.6;font-style:italic}
+/* ── FAQ ── */
+.faq{padding:72px 0;background:var(--gray-light,#F6F7F2)}
+.faq-list{margin-top:40px;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;gap:16px;user-select:none}
+.faq-q-text{font-family:'Merriweather',serif;font-size:1rem;font-weight:700;color:var(--dark,#1A1C14);line-height:1.3}
+.faq-icon{font-size:1.25rem;color:var(--green);flex-shrink:0;font-weight:300;transition:transform .25s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 0 18px;font-size:.9375rem;color:var(--muted);line-height:1.75;max-width:720px}
+.faq-a ul{margin:8px 0 0 16px}
+.faq-a ul li{margin-bottom:5px}
+
 </style>
 </head>
 <body>
@@ -232,7 +260,7 @@ h1,h2,h3,h4{font-family:'Merriweather',Georgia,serif;line-height:1.25}
       <li><a href="#products">Products</a></li>
       <li><a href="#process">Our Process</a></li>
       <li><a href="#why-ksmt">About Us</a></li>
-      <li><a href="#rfq">Contact</a></li>
+      <li><a href="#supply-info">Supply Info</a></li><li><a href="#faq">FAQ</a></li><li><a href="#rfq">Contact</a></li>
     </ul>
     <a href="#rfq" class="btn-green nav-cta">Get in Touch</a>
     <div class="hamburger" onclick="toggleMenu(this)"><span></span><span></span><span></span></div>
@@ -417,6 +445,48 @@ h1,h2,h3,h4{font-family:'Merriweather',Georgia,serif;line-height:1.25}
   </div>
 </section>
 
+
+<!-- SUPPLY INFO -->
+<section class="specs" id="supply-info" style="background:var(--cream)">
+  <div class="container">
+    <div class="section-tag">Supply Information</div>
+    <h2 class="section-title">Ordering &amp; Supply Details</h2>
+    <div class="divider-yellow"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:36px">
+      <div style="background:#fff;padding:28px 24px">
+        <div style="font-size:1.5rem;margin-bottom:12px">📦</div>
+        <h4 style="font-family:'Merriweather',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px">Packaging Options</h4>
+        <ul style="list-style:none;font-size:.875rem;color:var(--muted);line-height:2">
+          <li>• 25 kg woven sacks</li>
+          <li>• 50 kg woven sacks</li>
+          <li>• Bulk (per truck)</li>
+          <li>• Custom packaging on request</li>
+        </ul>
+      </div>
+      <div style="background:#fff;padding:28px 24px">
+        <div style="font-size:1.5rem;margin-bottom:12px">🚚</div>
+        <h4 style="font-family:'Merriweather',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px">Minimum Order</h4>
+        <ul style="list-style:none;font-size:.875rem;color:var(--muted);line-height:2">
+          <li>• Rice / Grain: 1 ton minimum</li>
+          <li>• Onion: 500 kg minimum</li>
+          <li>• Regular supply: per agreement</li>
+          <li>• Bulk truckload orders welcome</li>
+        </ul>
+      </div>
+      <div style="background:#fff;padding:28px 24px">
+        <div style="font-size:1.5rem;margin-bottom:12px">🌾</div>
+        <h4 style="font-family:'Merriweather',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px">Supply Continuity</h4>
+        <ul style="list-style:none;font-size:.875rem;color:var(--muted);line-height:2">
+          <li>• Rice: year-round availability</li>
+          <li>• Grain: harvest-dependent</li>
+          <li>• Onion: seasonal (peak: May–Aug)</li>
+          <li>• Standing orders accommodated</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY KSMT -->
 <section class="why" id="why-ksmt">
   <div class="container">
@@ -455,6 +525,38 @@ h1,h2,h3,h4{font-family:'Merriweather',Georgia,serif;line-height:1.25}
         <div class="why-icon">📦</div>
         <h3>Flexible Volumes &amp; Packaging</h3>
         <p>From mid-volume distributors to large institutional buyers. Custom packaging — sacks, bulk, retail — and order frequency to suit your supply chain needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Common Questions</h2>
+    <div class="divider-yellow"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the minimum order quantity?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">Minimum order is <strong>1 ton</strong> for rice and grain, and <strong>500 kg</strong> for onion. We also accommodate regular standing supply agreements — weekly, fortnightly or monthly — based on your distribution needs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What packaging is available?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">Standard packaging is <strong>25 kg and 50 kg woven sacks</strong>. Bulk delivery (per truck, unpackaged) is available for buyers with own storage. Custom packaging or labelling can be discussed for regular buyers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Is supply available year-round?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><strong>Rice (beras)</strong> is available year-round from our milled stock. <strong>Grain (gabah)</strong> supply is highest during and after harvest season (typically May–August and November–January in East Java). <strong>Onion</strong> peaks May–August when Lumajang's harvest is at its largest. We will advise on availability when you enquire.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What area do you deliver to?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">We supply buyers across <strong>East Java</strong> with our own vehicles, and can arrange trucking to other Java provinces. For buyers outside Java, we can coordinate with your freight forwarder for inter-island shipment from Surabaya.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can we arrange a regular supply agreement?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — we work with regular buyers on standing supply agreements with agreed volume, frequency and pricing. Contact us to discuss your ongoing requirements and we will propose appropriate terms.</div>
       </div>
     </div>
   </div>
@@ -521,7 +623,7 @@ h1,h2,h3,h4{font-family:'Merriweather',Georgia,serif;line-height:1.25}
         <p>Grain, rice and onion processing in Lumajang, East Java. Reliable B2B agricultural supply for distributors, wholesalers and food industry buyers across Indonesia.</p>
       </div>
       <div class="footer-col"><h5>Products</h5><ul><li><a href="#products">🌾 Grain (Gabah)</a></li><li><a href="#products">🍚 Rice (Beras)</a></li><li><a href="#products">🧅 Onion (Bawang)</a></li></ul></div>
-      <div class="footer-col"><h5>Company</h5><ul><li><a href="#about">About KSMT</a></li><li><a href="#process">Our Process</a></li><li><a href="#rfq">Contact</a></li><li><a href="https://mustikatama.com">Mustikatama Group ↗</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="#about">About KSMT</a></li><li><a href="#process">Our Process</a></li><li><a href="#supply-info">Supply Info</a></li><li><a href="#faq">FAQ</a></li><li><a href="#rfq">Contact</a></li><li><a href="https://mustikatama.com">Mustikatama Group ↗</a></li></ul></div>
       <div class="footer-col"><h5>Contact</h5>
         <div class="footer-ci"><span class="footer-ci-icon">📍</span><div class="footer-ci-text">Jl. Raya Lumajang–Tempeh Km 7,<br>Kab. Lumajang, East Java 67371</div></div>
         <div class="footer-ci"><span class="footer-ci-icon">📞</span><div class="footer-ci-text"><a href="tel:+62334887888">+62 334 887888</a></div></div>
@@ -541,5 +643,11 @@ h1,h2,h3,h4{font-family:'Merriweather',Georgia,serif;line-height:1.25}
 function toggleMenu(btn){const l=document.querySelector('.nav-links');const o=l.style.display==='flex';l.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:#fff;padding:16px 24px 24px;border-bottom:2px solid var(--yellow);gap:14px;box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:999';btn.querySelectorAll('span')[0].style.transform=o?'':'rotate(45deg) translate(5px,5px)';btn.querySelectorAll('span')[1].style.opacity=o?'':'0';btn.querySelectorAll('span')[2].style.transform=o?'':'rotate(-45deg) translate(5px,-5px)'}
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.nav-links').style='';document.querySelector('.hamburger').querySelectorAll('span').forEach(s=>s.style='')}));
 </script>
+
+<script>
+function showSpec(e,id){document.querySelectorAll('.spec-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.spec-tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');e.target.classList.add('active')}
+function toggleFaq(el){const item=el.closest('.faq-item');const ans=item.querySelector('.faq-a');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.display='none'});if(!isOpen){item.classList.add('open');ans.style.display='block'}}
+</script>
+
 </body>
 </html>
