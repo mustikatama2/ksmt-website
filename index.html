@@ -34,7 +34,6 @@
   --tan:      #b0924e;
   --ubar-h:   34px;
   --nav-h:    66px;
-  --pnav-h:   46px;
   --sticky-t: calc(var(--ubar-h) + var(--nav-h)); /* 100px */
 }
 
@@ -109,7 +108,7 @@ ul { list-style: none; }
 .ubar-dot { color: var(--border); }
 .ubar-hours { font-size: 10.5px; color: var(--light); }
 @media(max-width: 768px) { .ubar-hours { display: none; } }
-@media(max-width: 480px) { .ubar { display: none; } .pnav { top: var(--nav-h); } }
+@media(max-width: 480px) { .ubar { display: none; } }
 
 /* ═══════════════════════════════════════════════
    NAVBAR
@@ -286,68 +285,9 @@ ul { list-style: none; }
 .sec-rule-line { flex: 1; height: 1px; background: var(--border); }
 
 /* ═══════════════════════════════════════════════
-   PRODUCT AREA  (wrapper that keeps pnav sticky)
+   PRODUCT AREA
 ═══════════════════════════════════════════════ */
 .products-area { position: relative; }
-
-/* ═══════════════════════════════════════════════
-   STICKY PRODUCT QUICK-NAV
-   Uses position:sticky inside products-area —
-   sticks ONLY while products section is on screen
-═══════════════════════════════════════════════ */
-.pnav {
-  position: sticky;
-  top: var(--sticky-t);
-  z-index: 800;
-  background: var(--white);
-  border-bottom: 2px solid var(--border);
-  height: var(--pnav-h);
-}
-.pnav-in {
-  max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  height: 100%; display: flex; align-items: center; gap: 0;
-}
-.pnav-label {
-  font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
-  text-transform: uppercase; color: var(--light);
-  padding-right: 24px; border-right: 1px solid var(--border); margin-right: 24px;
-}
-.pnav-links { display: flex; gap: 0; flex: 1; }
-.pnav-link {
-  display: flex; align-items: center; gap: 8px;
-  padding: 0 20px; height: var(--pnav-h);
-  font-size: .8rem; font-weight: 500; color: var(--mid);
-  border-bottom: 2px solid transparent; margin-bottom: -2px;
-  transition: color .15s, border-color .15s;
-  white-space: nowrap;
-}
-.pnav-link:hover { color: var(--text); }
-.pnav-link.active { color: var(--tan); border-bottom-color: var(--tan); }
-.pnav-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: .875rem; font-weight: 600; color: var(--border);
-  transition: color .15s;
-}
-.pnav-link.active .pnav-num { color: var(--tan); }
-.pnav-cta {
-  display: inline-flex; align-items: center; gap: 7px;
-  margin-left: auto;
-  font-size: .7rem; font-weight: 600; letter-spacing: 1.8px;
-  text-transform: uppercase; color: var(--green);
-  padding: 9px 20px; border: 1.5px solid rgba(42,92,58,.3);
-  transition: background .2s, color .2s, border-color .2s;
-  white-space: nowrap;
-}
-.pnav-cta:hover { background: var(--green); color: #fff; border-color: var(--green); }
-@media(max-width: 768px) {
-  .pnav-label { display: none; }
-  .pnav-link { padding: 0 12px; font-size: .75rem; }
-  .pnav-cta { display: none; }
-}
-@media(max-width: 480px) {
-  .pnav-link { padding: 0 10px; font-size: .7rem; gap: 5px; }
-  .pnav-num { display: none; }
-}
 
 /* ═══════════════════════════════════════════════
    PRODUCT CATALOG  (TSP Songhe overview grid)
@@ -861,27 +801,8 @@ ul { list-style: none; }
   </div>
 </div>
 
-<!-- ═══ PRODUCTS AREA  (pnav sticks within this block) ═══ -->
+<!-- ═══ PRODUCTS AREA ═══ -->
 <div class="products-area">
-
-  <!-- Sticky product quick-nav — sticks while products-area is on screen -->
-  <nav class="pnav" id="pnav" aria-label="Navigasi produk">
-    <div class="pnav-in">
-      <span class="pnav-label">Produk</span>
-      <div class="pnav-links">
-        <a class="pnav-link active" href="#beras" data-id="beras">
-          <span class="pnav-num">01</span> Beras Putih
-        </a>
-        <a class="pnav-link" href="#gabah" data-id="gabah">
-          <span class="pnav-num">02</span> Gabah
-        </a>
-        <a class="pnav-link" href="#bawang" data-id="bawang">
-          <span class="pnav-num">03</span> Bawang Merah
-        </a>
-      </div>
-      <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="pnav-cta"><span class="wa-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span> Minta Penawaran →</a>
-    </div>
-  </nav>
 
   <!-- Catalog overview -->
   <section id="produk">
@@ -1443,30 +1364,13 @@ ul { list-style: none; }
     revealEls.forEach(function(el) { el.classList.add('visible'); });
   }
 
-  /* ── Pnav scrollspy — highlight active product ── */
-  var pnavLinks = document.querySelectorAll('.pnav-link');
-  var productIds = ['beras', 'gabah', 'bawang'];
-  var pnavObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        pnavLinks.forEach(function(a) { a.classList.remove('active'); });
-        var link = document.querySelector('.pnav-link[data-id="' + e.target.id + '"]');
-        if (link) link.classList.add('active');
-      }
-    });
-  }, { threshold: 0.35 });
-  productIds.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) pnavObs.observe(el);
-  });
-
   /* ── Catalog card smooth scroll ── */
   document.querySelectorAll('.cat-card').forEach(function(card) {
     card.addEventListener('click', function(e) {
       e.preventDefault();
       var target = document.querySelector(card.getAttribute('href'));
       if (target) {
-        var offset = 34 + 66 + 46 + 24; /* ubar + header + pnav + breathing room */
+        var offset = 34 + 66 + 24; /* ubar + header + breathing room */
         window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
       }
     });
