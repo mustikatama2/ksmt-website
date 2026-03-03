@@ -629,7 +629,7 @@ ul { list-style: none; }
 }
 .contact-in {
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
 }
 .contact-info-label {
   font-size: 9.5px; font-weight: 700; letter-spacing: 3.5px;
@@ -667,39 +667,48 @@ ul { list-style: none; }
 .hours-box tr + tr td { border-top: 1px solid var(--border); }
 .map-box { margin-top: 16px; border: 1px solid var(--border); overflow: hidden; }
 .map-box iframe { width: 100%; height: 180px; display: block; border: none; filter: saturate(.75); }
-/* Form */
-.form-box { background: var(--white); border: 1px solid var(--border); padding: 40px; }
-.form-box h3 {
+/* WhatsApp CTA card */
+.wa-card {
+  background: var(--white); border: 1px solid var(--border);
+  padding: 44px 40px; display: flex; flex-direction: column;
+}
+.wa-card-icon {
+  font-size: 2.5rem; margin-bottom: 20px; line-height: 1;
+}
+.wa-card h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.625rem; font-weight: 600; color: var(--text); margin-bottom: 28px;
+  font-size: 1.75rem; font-weight: 600; color: var(--text);
+  line-height: 1.2; margin-bottom: 12px;
 }
-.fg { margin-bottom: 16px; }
-.fg label {
-  display: block; font-size: 9px; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--text); margin-bottom: 7px;
+.wa-card p {
+  font-size: .9rem; font-weight: 300; color: var(--mid);
+  line-height: 1.85; margin-bottom: 32px;
 }
-.fg input, .fg select, .fg textarea {
-  width: 100%; padding: 11px 14px; border: 1px solid var(--border);
-  background: var(--off); font-family: 'Inter', sans-serif;
-  font-size: .875rem; font-weight: 300; color: var(--text);
-  outline: none; transition: border-color .2s, background .2s;
-  -webkit-appearance: none; border-radius: 0;
+.btn-wa {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  background: #25D366; color: #fff;
+  font-size: .875rem; font-weight: 600; letter-spacing: .3px;
+  padding: 16px 28px; text-align: center;
+  transition: background .2s, transform .1s;
+  margin-bottom: 14px;
 }
-.fg input:focus, .fg select:focus, .fg textarea:focus {
-  border-color: var(--green); background: var(--white);
+.btn-wa:hover { background: #1ebe5d; transform: translateY(-1px); }
+.btn-wa:active { transform: translateY(0); }
+.btn-wa-num { font-size: .8rem; font-weight: 400; opacity: .85; }
+.wa-note {
+  font-size: .8rem; font-weight: 300; color: var(--light);
+  text-align: center; letter-spacing: .2px;
 }
-.fg textarea { resize: vertical; min-height: 100px; }
-.fg select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a09890'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 14px center; padding-right: 34px;
+/* Phone line */
+.btn-phone {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  border: 1.5px solid var(--border); color: var(--text);
+  font-size: .875rem; font-weight: 500;
+  padding: 13px 28px; text-align: center; margin-bottom: 14px;
+  transition: border-color .2s, background .2s;
 }
-.btn-form {
-  width: 100%; padding: 14px; background: var(--green); color: #fff; border: none;
-  cursor: pointer; font-family: 'Inter', sans-serif; font-size: .7rem; font-weight: 600;
-  letter-spacing: 2px; text-transform: uppercase; transition: background .2s;
-}
-.btn-form:hover { background: var(--green-dk); }
-@media(max-width: 960px) { .contact-in { grid-template-columns: 1fr; gap: 48px; } .form-box { padding: 28px 24px; } }
+.btn-phone:hover { border-color: var(--green); background: #f3f8f5; }
+@media(max-width: 960px) { .contact-in { grid-template-columns: 1fr; gap: 40px; } .wa-card { padding: 32px 24px; } }
 
 /* ═══════════════════════════════════════════════
    FOOTER
@@ -773,7 +782,7 @@ ul { list-style: none; }
       <a href="#tentang">Tentang Kami</a>
       <a href="#proses">Proses</a>
       <a href="#kontak">Kontak</a>
-      <a href="#kontak" class="header-btn">Minta Penawaran</a>
+      <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="header-btn">Minta Penawaran</a>
     </nav>
     <button class="hbur" id="hbur" aria-label="Buka menu">
       <span></span><span></span><span></span>
@@ -783,7 +792,7 @@ ul { list-style: none; }
     <a href="#produk">Produk</a>
     <a href="#tentang">Tentang Kami</a>
     <a href="#proses">Proses</a>
-    <a href="#kontak">Minta Penawaran</a>
+    <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener">Minta Penawaran</a>
   </div>
 </header>
 
@@ -817,7 +826,7 @@ ul { list-style: none; }
       </p>
       <div class="hero-actions">
         <a href="#produk" class="btn-white">Lihat Produk</a>
-        <a href="#kontak" class="btn-ghost">Minta Penawaran →</a>
+        <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="btn-ghost">Minta Penawaran →</a>
       </div>
     </div>
   </div>
@@ -864,7 +873,7 @@ ul { list-style: none; }
           <span class="pnav-num">03</span> Bawang Merah
         </a>
       </div>
-      <a href="#kontak" class="pnav-cta">Minta Penawaran →</a>
+      <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="pnav-cta">Minta Penawaran →</a>
     </div>
   </nav>
 
@@ -1018,7 +1027,7 @@ ul { list-style: none; }
               <dd>Sepanjang tahun</dd>
             </div>
           </dl>
-          <a href="#kontak" class="btn-solid">Minta Penawaran</a>
+          <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20Beras%20Putih%20KSMT" target="_blank" rel="noopener" class="btn-solid">Minta Penawaran</a>
         </div>
       </div>
     </div>
@@ -1075,7 +1084,7 @@ ul { list-style: none; }
               <dd>Musiman (stok tersedia)</dd>
             </div>
           </dl>
-          <a href="#kontak" class="btn-solid">Minta Penawaran</a>
+          <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20Gabah%20KSMT" target="_blank" rel="noopener" class="btn-solid">Minta Penawaran</a>
         </div>
       </div>
     </div>
@@ -1136,7 +1145,7 @@ ul { list-style: none; }
               <dd>April – September (puncak)</dd>
             </div>
           </dl>
-          <a href="#kontak" class="btn-solid">Minta Penawaran</a>
+          <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20Bawang%20Merah%20KSMT" target="_blank" rel="noopener" class="btn-solid">Minta Penawaran</a>
         </div>
       </div>
     </div>
@@ -1217,7 +1226,7 @@ ul { list-style: none; }
         <div class="astat"><div class="astat-n">3</div><div class="astat-l">Komoditas</div></div>
         <div class="astat"><div class="astat-n">Jatim</div><div class="astat-l">Sumber Langsung</div></div>
       </div>
-      <a href="#kontak" class="btn-solid">Hubungi Kami</a>
+      <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="btn-solid">Hubungi via WhatsApp</a>
     </div>
   </div>
 </section>
@@ -1308,8 +1317,8 @@ ul { list-style: none; }
   <div class="contact-in">
     <div class="contact-info reveal">
       <div class="contact-info-label">Hubungi Kami</div>
-      <h2>Minta Penawaran</h2>
-      <p>Sampaikan kebutuhan Anda — komoditas, volume, kualitas, dan lokasi pengiriman. Kami merespons dalam satu hari kerja.</p>
+      <h2>Mari Bicara</h2>
+      <p>Hubungi tim kami langsung untuk pertanyaan produk, harga, atau jadwal pengiriman. Kami aktif setiap hari kerja.</p>
       <div class="ci-rows">
         <div class="ci-row">
           <span class="ci-ico">📍</span>
@@ -1321,15 +1330,15 @@ ul { list-style: none; }
         <div class="ci-row">
           <span class="ci-ico">📞</span>
           <div class="ci-content">
-            <div class="ci-lbl">Telepon</div>
+            <div class="ci-lbl">Telepon Kantor</div>
             <div class="ci-val"><a href="tel:+6233488788">+62 334 887888</a></div>
           </div>
         </div>
         <div class="ci-row">
-          <span class="ci-ico">✉️</span>
+          <span class="ci-ico">📱</span>
           <div class="ci-content">
-            <div class="ci-lbl">Email</div>
-            <div class="ci-val"><a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></div>
+            <div class="ci-lbl">WhatsApp</div>
+            <div class="ci-val"><a href="https://wa.me/6285336224224">+62 853 3622 4224</a></div>
           </div>
         </div>
       </div>
@@ -1345,40 +1354,19 @@ ul { list-style: none; }
       </div>
     </div>
 
-    <div class="form-box reveal reveal-d1">
-      <h3>Kirim Pertanyaan</h3>
-      <form action="https://formsubmit.co/marketing@mustikatama.com" method="POST">
-        <input type="hidden" name="_subject" value="Pertanyaan Produk KSMT">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://ksmt.mustikatama.com/#kontak">
-        <div class="fg">
-          <label>Nama Lengkap</label>
-          <input type="text" name="name" placeholder="Nama Anda" required>
-        </div>
-        <div class="fg">
-          <label>Perusahaan</label>
-          <input type="text" name="company" placeholder="Nama perusahaan">
-        </div>
-        <div class="fg">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="email@perusahaan.com" required>
-        </div>
-        <div class="fg">
-          <label>Produk yang Diminati</label>
-          <select name="product" required>
-            <option value="">Pilih produk…</option>
-            <option>Beras Putih</option>
-            <option>Gabah</option>
-            <option>Bawang Merah</option>
-            <option>Beberapa produk</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label>Keterangan Kebutuhan</label>
-          <textarea name="message" placeholder="Volume, kualitas, kemasan, lokasi pengiriman…" required></textarea>
-        </div>
-        <button type="submit" class="btn-form">Kirim Pertanyaan</button>
-      </form>
+    <div class="wa-card reveal reveal-d1">
+      <div class="wa-card-icon">💬</div>
+      <h3>Chat Langsung via WhatsApp</h3>
+      <p>Tim marketing kami siap menjawab pertanyaan tentang produk, harga, ketersediaan, dan pengiriman. Respons cepat di hari kerja.</p>
+      <a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.117 1.522 5.849L.057 23.522a.75.75 0 00.921.921l5.673-1.465A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.7-.495-5.25-1.361l-.376-.217-3.904 1.007 1.008-3.791-.237-.389A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        <span>Chat Sekarang &nbsp;·&nbsp; <span class="btn-wa-num">+62 853 3622 4224</span></span>
+      </a>
+      <a href="tel:+6233488788" class="btn-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11 19.79 19.79 0 01.01 2.38 2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Telepon Kantor &nbsp;·&nbsp; +62 334 887888
+      </a>
+      <p class="wa-note">Biasanya direspons dalam &lt; 1 jam pada jam kerja</p>
     </div>
   </div>
 </section>
@@ -1419,9 +1407,9 @@ ul { list-style: none; }
 </footer>
 
 <!-- ═══ FLOATING CTA ═══ -->
-<a href="#kontak" class="float-cta" id="floatCta" aria-label="Minta penawaran">
-  <span class="float-cta-icon">✉</span>
-  Minta Penawaran
+<a href="https://wa.me/6285336224224?text=Halo%2C%20saya%20ingin%20menanyakan%20tentang%20produk%20KSMT" target="_blank" rel="noopener" class="float-cta" id="floatCta" aria-label="Chat WhatsApp">
+  <span class="float-cta-icon">💬</span>
+  WhatsApp
 </a>
 
 <script>
