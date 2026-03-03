@@ -109,7 +109,7 @@ ul { list-style: none; }
 .ubar-dot { color: var(--border); }
 .ubar-hours { font-size: 10.5px; color: var(--light); }
 @media(max-width: 768px) { .ubar-hours { display: none; } }
-@media(max-width: 480px) { .ubar { display: none; } }
+@media(max-width: 480px) { .ubar { display: none; } .pnav { top: var(--nav-h); } }
 
 /* ═══════════════════════════════════════════════
    NAVBAR
@@ -349,7 +349,8 @@ ul { list-style: none; }
 /* ═══════════════════════════════════════════════
    PRODUCT CATALOG  (TSP Songhe overview grid)
 ═══════════════════════════════════════════════ */
-.catalog { padding: 48px 0 0; }
+.catalog-head { max-width: 1200px; margin: 0 auto; padding: 48px 32px 0; }
+.catalog { padding: 20px 0 0; }
 .catalog-grid {
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
   display: grid; grid-template-columns: repeat(3,1fr);
@@ -869,7 +870,7 @@ ul { list-style: none; }
 
   <!-- Catalog overview -->
   <section id="produk">
-    <div style="max-width:1200px;margin:0 auto;padding:48px 32px 0;">
+    <div class="catalog-head">
       <div class="sec-rule reveal">
         <span class="sec-rule-text">Produk Kami</span>
         <div class="sec-rule-line"></div>
