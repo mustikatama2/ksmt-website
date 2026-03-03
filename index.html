@@ -22,93 +22,116 @@
    TOKENS
 ═══════════════════════════════════════════════ */
 :root {
-  --white:   #ffffff;
-  --off:     #f8f5ef;   /* warm off-white — RU-style cream bg */
-  --stone:   #edeae3;
-  --border:  #e2ddd5;
-  --text:    #1c1916;
-  --mid:     #6e6860;
-  --light:   #a09890;
-  --green:   #2a5c3a;   /* accent — used sparingly */
-  --tan:     #b0924e;   /* product name colour — inspired by TSP #84754e */
-  --h:       66px;      /* header height */
+  --white:    #ffffff;
+  --off:      #f8f5ef;
+  --stone:    #edeae3;
+  --border:   #e2ddd5;
+  --text:     #1c1916;
+  --mid:      #6e6860;
+  --light:    #a09890;
+  --green:    #2a5c3a;
+  --green-dk: #1e4a2c;
+  --tan:      #b0924e;
+  --ubar-h:   34px;
+  --nav-h:    66px;
+  --pnav-h:   46px;
+  --sticky-t: calc(var(--ubar-h) + var(--nav-h)); /* 100px */
 }
 
 /* ═══════════════════════════════════════════════
-   RESET
+   RESET + BASE
 ═══════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; font-size: 15px; line-height: 1.7; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text); background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px; line-height: 1.7;
+}
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 /* ═══════════════════════════════════════════════
-   PLACEHOLDERS
+   PHOTO PLACEHOLDERS
 ═══════════════════════════════════════════════ */
 .ph {
   width: 100%; height: 100%; min-height: 200px;
   display: flex; flex-direction: column; align-items: center;
   justify-content: center; gap: 10px; padding: 24px; text-align: center;
 }
-.ph-em  { font-size: 2.25rem; opacity: .8; }
-.ph-lbl { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.8); }
-.ph-note{ font-size: 9px; color: rgba(255,255,255,.5); max-width: 180px; line-height: 1.6; }
-.c-rice  { background: linear-gradient(135deg,#cfc0a0,#a89060); }
-.c-gabah { background: linear-gradient(135deg,#bfaa50,#8a7828); }
-.c-onion { background: linear-gradient(135deg,#a04050,#682030); }
-.c-mill  { background: linear-gradient(135deg,#4a7060,#263c30); }
-.c-farm  { background: linear-gradient(135deg,#7a9838,#486018); }
-.c-dry   { background: linear-gradient(135deg,#c09840,#845e18); }
-.c-pack  { background: linear-gradient(135deg,#6070a0,#384060); }
+.ph-em   { font-size: 2.25rem; opacity: .75; line-height: 1; }
+.ph-lbl  { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.85); }
+.ph-note { font-size: 9px; color: rgba(255,255,255,.5); max-width: 180px; line-height: 1.65; }
+.c-rice  { background: linear-gradient(135deg, #cfc0a0, #a89060); }
+.c-gabah { background: linear-gradient(135deg, #bfaa50, #8a7828); }
+.c-onion { background: linear-gradient(135deg, #a04050, #682030); }
+.c-mill  { background: linear-gradient(135deg, #4a7060, #263c30); }
+.c-farm  { background: linear-gradient(135deg, #7a9838, #486018); }
+.c-dry   { background: linear-gradient(135deg, #c09840, #845e18); }
+.c-pack  { background: linear-gradient(135deg, #6070a0, #384060); }
 
 /* ═══════════════════════════════════════════════
-   UTILITY BAR  (barely-there, like TSP Songhe)
+   SCROLL REVEAL ANIMATION
+═══════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+
+/* ═══════════════════════════════════════════════
+   UTILITY BAR
 ═══════════════════════════════════════════════ */
 .ubar {
   background: var(--off);
   border-bottom: 1px solid var(--border);
-  height: 34px;
+  height: var(--ubar-h);
   display: flex; align-items: center;
+  position: sticky; top: 0; z-index: 1000;
 }
 .ubar-in {
   max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 32px;
   display: flex; justify-content: space-between; align-items: center;
   font-size: 11px; font-weight: 400; color: var(--mid); letter-spacing: .2px;
 }
-.ubar-contact { display: flex; gap: 16px; }
+.ubar-contact { display: flex; gap: 16px; align-items: center; }
 .ubar-contact a { color: var(--mid); transition: color .15s; }
 .ubar-contact a:hover { color: var(--text); }
 .ubar-dot { color: var(--border); }
 .ubar-hours { font-size: 10.5px; color: var(--light); }
-@media(max-width:768px){ .ubar-hours { display: none; } }
-@media(max-width:480px){ .ubar { display: none; } }
+@media(max-width: 768px) { .ubar-hours { display: none; } }
+@media(max-width: 480px) { .ubar { display: none; } }
 
 /* ═══════════════════════════════════════════════
-   HEADER  (clean white, inspired by Royal Umbrella)
+   NAVBAR
 ═══════════════════════════════════════════════ */
 .header {
-  position: sticky; top: 34px; z-index: 900;
+  position: sticky; top: var(--ubar-h); z-index: 900;
   background: rgba(255,255,255,.97);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  height: var(--h);
+  height: var(--nav-h);
 }
-@media(max-width:480px){ .header { top: 0; } }
+@media(max-width: 480px) { .header { top: 0; } }
 .header-in {
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  height: 100%; display: flex; align-items: center; justify-content: space-between;
-  gap: 24px;
+  height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .logo { display: flex; align-items: center; gap: 12px; }
 .logo-img { height: 36px; width: auto; object-fit: contain; }
 .logo-wordmark { line-height: 1.15; }
 .logo-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem; font-weight: 600;
-  color: var(--text); letter-spacing: .5px;
+  font-size: 1.2rem; font-weight: 600; color: var(--text); letter-spacing: .5px;
 }
 .logo-tag {
   font-size: 8.5px; font-weight: 500; letter-spacing: 2.2px;
@@ -121,68 +144,57 @@ ul { list-style: none; }
 }
 .header-nav a:hover { color: var(--text); }
 .header-btn {
-  font-size: .7rem; font-weight: 600; letter-spacing: 1.8px;
+  font-size: .7rem !important; font-weight: 600 !important; letter-spacing: 1.8px !important;
   text-transform: uppercase; color: var(--white) !important;
-  background: var(--green); padding: 9px 22px;
-  transition: background .2s;
+  background: var(--green); padding: 9px 22px; transition: background .2s;
 }
-.header-btn:hover { background: #1e4a2c !important; }
+.header-btn:hover { background: var(--green-dk) !important; }
 .hbur {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;
 }
-.hbur span { width: 20px; height: 1.5px; background: var(--text); display: block; transition: .2s; }
-.mob-menu {
-  display: none; flex-direction: column;
-  border-top: 1px solid var(--border); background: var(--white);
-}
+.hbur span { width: 20px; height: 1.5px; background: var(--text); display: block; }
+.mob-menu { display: none; flex-direction: column; border-top: 1px solid var(--border); background: var(--white); }
 .mob-menu.open { display: flex; }
-.mob-menu a {
-  padding: 14px 32px; font-size: .875rem; font-weight: 400;
-  color: var(--text); border-bottom: 1px solid var(--border);
-}
-@media(max-width:768px){
+.mob-menu a { padding: 14px 32px; font-size: .875rem; font-weight: 400; color: var(--text); border-bottom: 1px solid var(--border); }
+@media(max-width: 768px) {
   .header-nav { display: none; }
   .hbur { display: flex; }
 }
 
 /* ═══════════════════════════════════════════════
-   HERO  (full-bleed, Royal Umbrella-style)
-   — minimal text overlay, photography is the star
+   HERO
 ═══════════════════════════════════════════════ */
 .hero {
-  position: relative; height: 92vh; min-height: 520px; max-height: 860px;
-  overflow: hidden;
+  position: relative; height: 92vh; min-height: 520px; max-height: 860px; overflow: hidden;
 }
-.hero-bg {
-  position: absolute; inset: 0;
-}
-.hero-bg .ph, .hero-bg img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-/* Gradient: dark left, fading right — lets photo breathe */
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg .ph, .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 .hero-scrim {
   position: absolute; inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(10,9,6,.72) 0%,
-    rgba(10,9,6,.45) 45%,
-    rgba(10,9,6,.1) 100%
+    105deg,
+    rgba(10,9,6,.78) 0%,
+    rgba(10,9,6,.5) 50%,
+    rgba(10,9,6,.08) 100%
   );
 }
-.hero-body {
+/* ── FIXED: proper left-aligned hero text within 1200px grid ── */
+.hero-frame {
   position: relative; z-index: 2; height: 100%;
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  display: flex; flex-direction: column; justify-content: center;
-  max-width: 700px;
 }
-.hero-origin {
+.hero-body {
+  max-width: 580px; height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hero-kicker {
   font-size: 10px; font-weight: 600; letter-spacing: 4px;
   text-transform: uppercase; color: rgba(255,255,255,.5);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   display: flex; align-items: center; gap: 10px;
 }
-.hero-origin::before {
+.hero-kicker::before {
   content: ''; width: 28px; height: 1px;
   background: rgba(255,255,255,.35); flex-shrink: 0;
 }
@@ -190,115 +202,166 @@ ul { list-style: none; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.75rem, 5.5vw, 5rem);
   font-weight: 300; font-style: italic;
-  color: #fff; line-height: 1.05;
-  letter-spacing: -.5px; margin-bottom: 22px;
+  color: #fff; line-height: 1.05; letter-spacing: -.5px; margin-bottom: 20px;
 }
 .hero-h1 strong { font-style: normal; font-weight: 600; }
 .hero-sub {
   font-size: .9375rem; font-weight: 300;
-  color: rgba(255,255,255,.65);
-  line-height: 1.85; max-width: 480px; margin-bottom: 40px;
+  color: rgba(255,255,255,.65); line-height: 1.85; margin-bottom: 38px;
 }
 .hero-actions { display: flex; align-items: center; gap: 24px; }
-.btn-primary {
-  display: inline-block;
-  font-size: .7rem; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase;
-  background: var(--white); color: var(--text);
-  padding: 14px 30px; transition: background .2s, color .2s;
+.btn-white {
+  display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; background: var(--white); color: var(--text);
+  padding: 14px 30px; transition: background .2s;
 }
-.btn-primary:hover { background: #f0c858; }
-.btn-text {
+.btn-white:hover { background: #f5d96a; }
+.btn-ghost {
   font-size: .8125rem; font-weight: 400;
   color: rgba(255,255,255,.65);
-  border-bottom: 1px solid rgba(255,255,255,.3);
-  padding-bottom: 1px; letter-spacing: .3px; transition: .15s;
+  border-bottom: 1px solid rgba(255,255,255,.3); padding-bottom: 1px;
+  letter-spacing: .3px; transition: .15s;
 }
-.btn-text:hover { color: #fff; border-bottom-color: #fff; }
-/* scroll indicator */
+.btn-ghost:hover { color: #fff; border-bottom-color: #fff; }
+/* Scroll cue — vertical */
 .hero-scroll {
-  position: absolute; bottom: 32px; left: 32px;
-  display: flex; align-items: center; gap: 10px;
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
   font-size: 9px; font-weight: 600; letter-spacing: 3px;
   text-transform: uppercase; color: rgba(255,255,255,.3);
 }
 .hero-scroll::after {
-  content: '';
-  width: 40px; height: 1px;
-  background: rgba(255,255,255,.2);
+  content: ''; width: 1px; height: 36px; background: rgba(255,255,255,.25);
+  animation: scrollPulse 1.8s ease infinite;
 }
-@media(max-width:600px){
+@keyframes scrollPulse {
+  0%, 100% { opacity: .25; transform: scaleY(1); }
+  50% { opacity: .7; transform: scaleY(1.3); }
+}
+@media(max-width: 600px) {
   .hero { height: 75vh; }
   .hero-h1 { font-size: 2.5rem; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
 /* ═══════════════════════════════════════════════
-   KEY FACTS STRIP  (3 stats, like TSP Songhe header info)
+   FACTS STRIP — 4 items, dark band
 ═══════════════════════════════════════════════ */
-.facts {
-  background: var(--text); color: rgba(255,255,255,.55);
-  padding: 0;
-}
+.facts { background: var(--text); }
 .facts-in {
   max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(4, 1fr);
 }
 .fact {
-  padding: 28px 36px; text-align: center;
+  padding: 26px 24px; text-align: center;
   border-right: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.5);
 }
 .fact:last-child { border-right: none; }
-.fact-num {
+.fact-n {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.25rem; font-weight: 600;
-  color: #fff; line-height: 1; margin-bottom: 5px;
+  font-size: 2.25rem; font-weight: 600; color: #fff; line-height: 1; margin-bottom: 5px;
 }
-.fact-lbl {
-  font-size: 9.5px; font-weight: 500;
-  letter-spacing: 2px; text-transform: uppercase;
+.fact-l {
+  font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
 }
-@media(max-width:600px){
-  .facts-in { grid-template-columns: repeat(3,1fr); }
-  .fact { padding: 20px 16px; }
-  .fact-num { font-size: 1.75rem; }
+@media(max-width: 600px) {
+  .facts-in { grid-template-columns: repeat(2, 1fr); }
+  .fact { padding: 18px 16px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .fact-n { font-size: 1.75rem; }
 }
 
 /* ═══════════════════════════════════════════════
-   SECTION DIVIDER
+   SECTION EYEBROW
 ═══════════════════════════════════════════════ */
-.sec-label {
-  max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  display: flex; align-items: center; gap: 20px;
-  padding-top: 80px;
+.sec-rule {
+  display: flex; align-items: center; gap: 20px; margin-bottom: 14px;
 }
-.sec-label-text {
+.sec-rule-text {
   font-size: 9.5px; font-weight: 700; letter-spacing: 3.5px;
   text-transform: uppercase; color: var(--light); white-space: nowrap;
 }
-.sec-label-line { flex: 1; height: 1px; background: var(--border); }
+.sec-rule-line { flex: 1; height: 1px; background: var(--border); }
 
 /* ═══════════════════════════════════════════════
-   PRODUCT CATALOG  (TSP Songhe-inspired overview)
-   3 product thumbnails with names + available sizes
+   PRODUCT AREA  (wrapper that keeps pnav sticky)
 ═══════════════════════════════════════════════ */
-.catalog {
-  padding: 40px 0 0;
+.products-area { position: relative; }
+
+/* ═══════════════════════════════════════════════
+   STICKY PRODUCT QUICK-NAV
+   Uses position:sticky inside products-area —
+   sticks ONLY while products section is on screen
+═══════════════════════════════════════════════ */
+.pnav {
+  position: sticky;
+  top: var(--sticky-t);
+  z-index: 800;
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
+  height: var(--pnav-h);
 }
+.pnav-in {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  height: 100%; display: flex; align-items: center; gap: 0;
+}
+.pnav-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--light);
+  padding-right: 24px; border-right: 1px solid var(--border); margin-right: 24px;
+}
+.pnav-links { display: flex; gap: 0; flex: 1; }
+.pnav-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 20px; height: var(--pnav-h);
+  font-size: .8rem; font-weight: 500; color: var(--mid);
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.pnav-link:hover { color: var(--text); }
+.pnav-link.active { color: var(--tan); border-bottom-color: var(--tan); }
+.pnav-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .875rem; font-weight: 600; color: var(--border);
+  transition: color .15s;
+}
+.pnav-link.active .pnav-num { color: var(--tan); }
+.pnav-cta {
+  margin-left: auto;
+  font-size: .7rem; font-weight: 600; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--green);
+  padding: 9px 20px; border: 1.5px solid rgba(42,92,58,.3);
+  transition: background .2s, color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.pnav-cta:hover { background: var(--green); color: #fff; border-color: var(--green); }
+@media(max-width: 768px) {
+  .pnav-label { display: none; }
+  .pnav-link { padding: 0 12px; font-size: .75rem; }
+  .pnav-cta { display: none; }
+}
+@media(max-width: 480px) {
+  .pnav-link { padding: 0 10px; font-size: .7rem; gap: 5px; }
+  .pnav-num { display: none; }
+}
+
+/* ═══════════════════════════════════════════════
+   PRODUCT CATALOG  (TSP Songhe overview grid)
+═══════════════════════════════════════════════ */
+.catalog { padding: 48px 0 0; }
 .catalog-grid {
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
   display: grid; grid-template-columns: repeat(3,1fr);
   gap: 1px; background: var(--border); margin-top: 28px;
 }
 .cat-card {
-  background: var(--white);
-  display: block; position: relative; overflow: hidden;
-  cursor: pointer; transition: background .2s;
+  background: var(--white); display: block;
+  overflow: hidden; cursor: pointer; transition: background .2s;
 }
 .cat-card:hover { background: var(--off); }
 .cat-photo {
-  aspect-ratio: 4/3; overflow: hidden;
-  position: relative;
+  aspect-ratio: 4/3; overflow: hidden; position: relative;
 }
 .cat-photo img, .cat-photo .ph {
   width: 100%; height: 100%; object-fit: cover;
@@ -309,234 +372,160 @@ ul { list-style: none; }
 .cat-body { padding: 22px 24px 28px; }
 .cat-num {
   font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
-  text-transform: uppercase; color: var(--light); margin-bottom: 6px;
+  text-transform: uppercase; color: var(--light); margin-bottom: 5px;
 }
 .cat-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.625rem; font-weight: 600;
-  color: var(--tan); line-height: 1.1; margin-bottom: 2px;
+  font-size: 1.625rem; font-weight: 600; color: var(--tan);
+  line-height: 1.1; margin-bottom: 2px;
 }
 .cat-name-en {
   font-size: .75rem; font-weight: 300; color: var(--light);
-  letter-spacing: .5px; margin-bottom: 12px;
+  letter-spacing: .5px; margin-bottom: 14px;
 }
-/* Available Sizes — exact TSP Songhe pattern */
-.avail-label {
+.avail-lbl {
   font-size: 9.5px; font-weight: 600; letter-spacing: 2px;
   text-transform: uppercase; color: var(--light); margin-bottom: 7px;
 }
-.avail-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
 .chip {
   font-size: .75rem; font-weight: 400; color: var(--text);
-  background: var(--off); border: 1px solid var(--border);
-  padding: 3px 10px; line-height: 1.5;
+  background: var(--off); border: 1px solid var(--border); padding: 3px 10px; line-height: 1.5;
 }
 .cat-more {
   font-size: .75rem; font-weight: 600; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--green);
-  display: inline-flex; align-items: center; gap: 6px;
-  transition: gap .15s;
+  display: inline-flex; align-items: center; gap: 6px; transition: gap .15s;
 }
 .cat-card:hover .cat-more { gap: 10px; }
-@media(max-width:768px){
-  .catalog-grid { grid-template-columns: 1fr; gap: 1px; }
-}
+@media(max-width: 768px) { .catalog-grid { grid-template-columns: 1fr; } }
 
 /* ═══════════════════════════════════════════════
-   PRODUCT DETAIL SECTIONS
-   Royal Umbrella-style: big photo + editorial copy
-   side-by-side, alternating direction
+   PRODUCT DETAIL SECTIONS  (Royal Umbrella style)
 ═══════════════════════════════════════════════ */
 .products { padding: 80px 0 0; }
-
 .pd-section {
-  max-width: 1200px; margin: 0 auto; padding: 0 32px 100px;
+  max-width: 1200px; margin: 0 auto; padding: 0 32px 96px;
 }
 .pd-section + .pd-section {
-  border-top: 1px solid var(--border);
-  padding-top: 80px;
+  border-top: 1px solid var(--border); padding-top: 80px;
 }
-
-/* Two-column: 58% photo / 42% info */
-.pd-layout {
+/* Two-col grid. Photo always first in DOM for accessibility.
+   .rev flips visual order via CSS order property */
+.pd-grid {
   display: grid; grid-template-columns: 58fr 42fr;
   gap: 64px; align-items: start;
 }
-.pd-layout.rev { direction: rtl; }
-.pd-layout.rev > * { direction: ltr; }
+.pd-grid.rev { grid-template-columns: 42fr 58fr; }
+.pd-grid.rev .pd-info   { order: 1; }
+.pd-grid.rev .pd-photo-wrap { order: 2; }
 
-/* Photo col */
+/* Photo */
 .pd-photo-wrap { position: relative; }
-.pd-photo-main {
-  width: 100%; aspect-ratio: 4/3; overflow: hidden;
-}
-.pd-photo-main img, .pd-photo-main .ph {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.pd-photo-badge {
+.pd-photo-main { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+.pd-photo-main img, .pd-photo-main .ph { width: 100%; height: 100%; object-fit: cover; }
+.pd-badge {
   position: absolute; bottom: 16px; left: 16px;
-  background: rgba(255,255,255,.94);
-  border: 1px solid var(--border);
-  padding: 10px 14px;
+  background: rgba(255,255,255,.94); border: 1px solid var(--border);
+  padding: 9px 13px;
   font-size: 9px; font-weight: 600; letter-spacing: 2px;
   text-transform: uppercase; color: var(--mid);
 }
-
-/* Info col */
+/* Info */
 .pd-info { padding-top: 10px; }
 .pd-no {
   font-size: 9px; font-weight: 700; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--light);
-  margin-bottom: 10px;
+  text-transform: uppercase; color: var(--light); margin-bottom: 10px;
 }
 .pd-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.75rem, 4vw, 4.25rem);
+  font-size: clamp(2.75rem, 4vw, 4.5rem);
   font-weight: 600; color: var(--tan);
-  line-height: .95; letter-spacing: -1px;
-  margin-bottom: 4px;
+  line-height: .95; letter-spacing: -1px; margin-bottom: 4px;
 }
 .pd-name-en {
   font-size: .875rem; font-weight: 300; color: var(--light);
-  letter-spacing: 1px; margin-bottom: 24px;
+  letter-spacing: 1px; margin-bottom: 22px;
 }
-.pd-divider { width: 40px; height: 1px; background: var(--border); margin-bottom: 24px; }
+.pd-rule { width: 36px; height: 1px; background: var(--border); margin-bottom: 22px; }
 .pd-story {
-  font-size: .9375rem; font-weight: 300;
-  color: var(--mid); line-height: 1.9;
+  font-size: .9375rem; font-weight: 300; color: var(--mid); line-height: 1.9;
 }
-.pd-story + .pd-story { margin-top: 14px; }
-
-/* Specs as clean definition list — TSP-style */
-.pd-specs {
-  margin-top: 28px;
-  border-top: 1px solid var(--border);
-}
+.pd-story + .pd-story { margin-top: 12px; }
+/* Specs */
+.pd-specs { margin-top: 28px; border-top: 1px solid var(--border); }
 .pd-spec {
-  display: grid; grid-template-columns: 130px 1fr;
-  border-bottom: 1px solid var(--border);
-  padding: 13px 0;
+  display: grid; grid-template-columns: 126px 1fr;
+  border-bottom: 1px solid var(--border); padding: 12px 0;
 }
 .pd-spec dt {
   font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--light);
-  padding-top: 1px;
+  text-transform: uppercase; color: var(--light); padding-top: 2px;
 }
 .pd-spec dd {
   font-size: .875rem; font-weight: 400; color: var(--text);
   display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
 }
-
-.pd-cta {
-  display: inline-block; margin-top: 32px;
-  font-size: .7rem; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--white); background: var(--green);
-  padding: 13px 28px; transition: background .2s;
+.btn-solid {
+  display: inline-block; margin-top: 30px;
+  font-size: .7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--white); background: var(--green); padding: 13px 28px; transition: background .2s;
 }
-.pd-cta:hover { background: #1e4a2c; }
-
-@media(max-width:960px){
-  .pd-layout, .pd-layout.rev {
-    grid-template-columns: 1fr; direction: ltr; gap: 32px;
-  }
+.btn-solid:hover { background: var(--green-dk); }
+@media(max-width: 960px) {
+  .pd-grid, .pd-grid.rev { grid-template-columns: 1fr; gap: 32px; }
+  .pd-grid.rev .pd-info, .pd-grid.rev .pd-photo-wrap { order: 0; }
   .pd-photo-main { aspect-ratio: 16/9; }
 }
-@media(max-width:600px){
+@media(max-width: 600px) {
   .pd-name { font-size: 2.75rem; }
-  .pd-spec { grid-template-columns: 110px 1fr; }
+  .pd-spec { grid-template-columns: 108px 1fr; }
 }
 
 /* ═══════════════════════════════════════════════
-   FULLBLEED BANNER STRIP  (photo divider)
-═══════════════════════════════════════════════ */
-.strip {
-  height: 260px; overflow: hidden; position: relative;
-}
-.strip-img {
-  position: absolute; inset: 0;
-}
-.strip-img img { width:100%; height:100%; object-fit:cover; filter:brightness(.5) saturate(1.1); }
-.strip-copy {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center; flex-direction: column;
-  text-align: center; gap: 8px; padding: 0 32px;
-}
-.strip-copy h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem,3vw,2.5rem);
-  font-weight: 300; font-style: italic; color: #fff; line-height: 1.2;
-}
-.strip-copy p {
-  font-size: .8125rem; font-weight: 300;
-  color: rgba(255,255,255,.55); letter-spacing: .5px;
-}
-
-/* ═══════════════════════════════════════════════
-   PROCESS  (clean 4-step, TSP-inspired minimal)
-═══════════════════════════════════════════════ */
-.process {
-  background: var(--off);
-  border-top: 1px solid var(--border);
-  padding: 80px 0 96px;
-}
-.process-in { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-.process-hd { margin-bottom: 56px; max-width: 480px; }
-.process-hd h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.25rem; font-weight: 600;
-  color: var(--text); line-height: 1.15; margin-bottom: 10px;
-}
-.process-hd p { font-size: .9375rem; font-weight: 300; color: var(--mid); }
-.process-steps {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px; background: var(--border);
-}
-.pstep { background: var(--white); }
-.pstep-photo { aspect-ratio: 1; overflow: hidden; }
-.pstep-photo .ph, .pstep-photo img { width:100%; height:100%; object-fit:cover; }
-.pstep-body { padding: 22px 20px 28px; }
-.pstep-n {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem; font-weight: 300; color: var(--border);
-  line-height: 1; margin-bottom: 8px;
-}
-.pstep-title {
-  font-size: .9375rem; font-weight: 600; color: var(--text);
-  margin-bottom: 8px;
-}
-.pstep-desc {
-  font-size: .8125rem; font-weight: 300; color: var(--mid); line-height: 1.75;
-}
-@media(max-width:960px){
-  .process-steps { grid-template-columns: repeat(2,1fr); }
-}
-@media(max-width:600px){
-  .process-steps { grid-template-columns: 1fr; }
-}
-
-/* ═══════════════════════════════════════════════
-   WHY / KEUNGGULAN
+   WHY KSMT  — right after products, before process
 ═══════════════════════════════════════════════ */
 .why {
   border-top: 1px solid var(--border);
   padding: 88px 0;
 }
 .why-in { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-.why-cols {
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 48px; margin-top: 56px;
-}
-.why-item-icon { font-size: 1.75rem; margin-bottom: 14px; }
-.why-item h3 {
+.why-head { max-width: 520px; margin-bottom: 56px; }
+.why-head h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 600; color: var(--text);
-  margin-bottom: 10px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600;
+  color: var(--text); line-height: 1.2; margin-top: 10px;
 }
-.why-item p { font-size: .875rem; font-weight: 300; color: var(--mid); line-height: 1.85; }
-@media(max-width:768px){
-  .why-cols { grid-template-columns: 1fr; gap: 32px; }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+.why-item { padding: 28px 24px; border: 1px solid var(--border); transition: border-color .2s, background .2s; }
+.why-item:hover { border-color: rgba(42,92,58,.3); background: #f3f8f5; }
+.why-icon { font-size: 1.5rem; margin-bottom: 14px; line-height: 1; }
+.why-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 10px;
 }
+.why-desc { font-size: .875rem; font-weight: 300; color: var(--mid); line-height: 1.85; }
+@media(max-width: 768px) { .why-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+/* ═══════════════════════════════════════════════
+   FULL-BLEED PHOTO DIVIDER STRIP
+═══════════════════════════════════════════════ */
+.strip {
+  height: 260px; overflow: hidden; position: relative;
+}
+.strip-img { position: absolute; inset: 0; }
+.strip-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.45) saturate(1.1); }
+.strip-body {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  text-align: center; gap: 8px; padding: 0 32px;
+}
+.strip-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300; font-style: italic; color: #fff; line-height: 1.2;
+}
+.strip-body p { font-size: .8125rem; font-weight: 300; color: rgba(255,255,255,.55); letter-spacing: .5px; }
 
 /* ═══════════════════════════════════════════════
    ABOUT
@@ -551,32 +540,29 @@ ul { list-style: none; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
 }
 .about-photo-frame { aspect-ratio: 3/4; overflow: hidden; }
-.about-photo-frame img, .about-photo-frame .ph { width:100%; height:100%; object-fit:cover; }
-.about-year-badge {
-  margin-top: 16px;
-  display: inline-block;
-  background: var(--green); color: #fff;
-  padding: 14px 22px; text-align: center;
+.about-photo-frame img, .about-photo-frame .ph { width: 100%; height: 100%; object-fit: cover; }
+.about-badge {
+  margin-top: 16px; display: inline-block;
+  background: var(--green); color: #fff; padding: 14px 22px; text-align: center;
 }
-.about-year-badge .yr {
+.about-badge .yr {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem; font-weight: 600; line-height: 1;
 }
-.about-year-badge .yl {
+.about-badge .yl {
   font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px;
-  text-transform: uppercase; color: rgba(255,255,255,.6);
-  margin-top: 4px;
+  text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 4px;
 }
-.about-text-head {
+.about-copy-label {
   font-size: 9.5px; font-weight: 700; letter-spacing: 3.5px;
-  text-transform: uppercase; color: var(--light); margin-bottom: 16px;
+  text-transform: uppercase; color: var(--light); margin-bottom: 14px;
 }
-.about-text h2 {
+.about-copy h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.25rem; font-weight: 600; color: var(--text);
-  line-height: 1.2; margin-bottom: 20px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600;
+  color: var(--text); line-height: 1.2; margin-bottom: 20px;
 }
-.about-text p {
+.about-copy p {
   font-size: .9375rem; font-weight: 300; color: var(--mid);
   line-height: 1.9; margin-bottom: 14px;
 }
@@ -585,23 +571,58 @@ ul { list-style: none; }
   gap: 1px; background: var(--border); margin: 28px 0 32px;
 }
 .astat { background: var(--white); padding: 18px 14px; text-align: center; }
-.astat .n {
+.astat-n {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.875rem; font-weight: 600; color: var(--green); line-height: 1;
 }
-.astat .l {
+.astat-l {
   font-size: 8.5px; font-weight: 600; letter-spacing: 1.8px;
   text-transform: uppercase; color: var(--light); margin-top: 5px;
 }
-@media(max-width:960px){
+@media(max-width: 960px) {
   .about-in { grid-template-columns: 1fr; gap: 40px; }
   .about-photo { display: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════════════ */
+.process {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 80px 0 96px;
+}
+.process-in { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.process-hd { margin-bottom: 48px; max-width: 480px; }
+.process-hd h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600;
+  color: var(--text); line-height: 1.2; margin-top: 10px; margin-bottom: 10px;
+}
+.process-hd p { font-size: .9375rem; font-weight: 300; color: var(--mid); }
+/* Steps with connecting line on desktop */
+.process-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; background: var(--border); position: relative;
+}
+.pstep { background: var(--off); }
+.pstep-photo { aspect-ratio: 1; overflow: hidden; }
+.pstep-photo .ph, .pstep-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pstep-body { padding: 22px 20px 28px; }
+.pstep-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 8px;
+}
+.pstep-title { font-size: .9375rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.pstep-desc { font-size: .8125rem; font-weight: 300; color: var(--mid); line-height: 1.75; }
+@media(max-width: 960px) { .process-steps { grid-template-columns: repeat(2,1fr); } }
+@media(max-width: 600px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════
    CONTACT
 ═══════════════════════════════════════════════ */
 .contact {
+  background: var(--off);
   border-top: 1px solid var(--border);
   padding: 88px 0;
 }
@@ -609,26 +630,26 @@ ul { list-style: none; }
   max-width: 1200px; margin: 0 auto; padding: 0 32px;
   display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
 }
-.contact-info-head {
+.contact-info-label {
   font-size: 9.5px; font-weight: 700; letter-spacing: 3.5px;
   text-transform: uppercase; color: var(--light); margin-bottom: 14px;
 }
 .contact-info h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.25rem; font-weight: 600; color: var(--text);
-  margin-bottom: 16px; line-height: 1.2;
+  font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600;
+  color: var(--text); margin-bottom: 16px; line-height: 1.2;
 }
 .contact-info > p {
   font-size: .9375rem; font-weight: 300; color: var(--mid);
   line-height: 1.85; margin-bottom: 32px;
 }
-.ci-rows { display: flex; flex-direction: column; gap: 0; }
+.ci-rows { display: flex; flex-direction: column; }
 .ci-row {
-  display: flex; align-items: flex-start; gap: 16px;
-  padding: 16px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 15px 0; border-bottom: 1px solid var(--border);
 }
 .ci-row:first-child { border-top: 1px solid var(--border); }
-.ci-icon { font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
+.ci-ico { font-size: .9375rem; margin-top: 1px; flex-shrink: 0; }
 .ci-content { flex: 1; }
 .ci-lbl {
   font-size: 9px; font-weight: 700; letter-spacing: 2px;
@@ -636,21 +657,20 @@ ul { list-style: none; }
 }
 .ci-val { font-size: .875rem; font-weight: 400; color: var(--text); }
 .ci-val a { color: var(--green); }
-.hours-table { margin-top: 16px; border: 1px solid var(--border); background: var(--off); }
-.hours-table table { width: 100%; border-collapse: collapse; }
-.hours-table td { padding: 10px 16px; font-size: .8125rem; font-weight: 300; color: var(--mid); }
-.hours-table td:first-child { font-weight: 600; color: var(--text); border-right: 1px solid var(--border); width: 50%; }
-.hours-table tr + tr td { border-top: 1px solid var(--border); }
-.map-frame { margin-top: 16px; border: 1px solid var(--border); overflow: hidden; }
-.map-frame iframe { width:100%; height:180px; display:block; border:none; filter:saturate(.75); }
-
-/* Form */
-.form-wrap {
-  background: var(--off); border: 1px solid var(--border); padding: 40px;
+.hours-box {
+  margin-top: 16px; border: 1px solid var(--border); background: var(--white);
 }
-.form-wrap h3 {
+.hours-box table { width: 100%; border-collapse: collapse; }
+.hours-box td { padding: 10px 16px; font-size: .8125rem; font-weight: 300; color: var(--mid); }
+.hours-box td:first-child { font-weight: 600; color: var(--text); border-right: 1px solid var(--border); width: 52%; }
+.hours-box tr + tr td { border-top: 1px solid var(--border); }
+.map-box { margin-top: 16px; border: 1px solid var(--border); overflow: hidden; }
+.map-box iframe { width: 100%; height: 180px; display: block; border: none; filter: saturate(.75); }
+/* Form */
+.form-box { background: var(--white); border: 1px solid var(--border); padding: 40px; }
+.form-box h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem; font-weight: 600; color: var(--text); margin-bottom: 28px;
+  font-size: 1.625rem; font-weight: 600; color: var(--text); margin-bottom: 28px;
 }
 .fg { margin-bottom: 16px; }
 .fg label {
@@ -658,15 +678,14 @@ ul { list-style: none; }
   text-transform: uppercase; color: var(--text); margin-bottom: 7px;
 }
 .fg input, .fg select, .fg textarea {
-  width: 100%; padding: 11px 14px;
-  border: 1px solid var(--border); background: var(--white);
-  font-family: 'Inter', sans-serif; font-size: .875rem;
-  font-weight: 300; color: var(--text);
-  outline: none; transition: border-color .2s;
+  width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+  background: var(--off); font-family: 'Inter', sans-serif;
+  font-size: .875rem; font-weight: 300; color: var(--text);
+  outline: none; transition: border-color .2s, background .2s;
   -webkit-appearance: none; border-radius: 0;
 }
 .fg input:focus, .fg select:focus, .fg textarea:focus {
-  border-color: var(--green);
+  border-color: var(--green); background: var(--white);
 }
 .fg textarea { resize: vertical; min-height: 100px; }
 .fg select {
@@ -674,67 +693,59 @@ ul { list-style: none; }
   background-repeat: no-repeat; background-position: right 14px center; padding-right: 34px;
 }
 .btn-form {
-  width: 100%; padding: 14px;
-  background: var(--green); color: #fff; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: .7rem; font-weight: 600;
+  width: 100%; padding: 14px; background: var(--green); color: #fff; border: none;
+  cursor: pointer; font-family: 'Inter', sans-serif; font-size: .7rem; font-weight: 600;
   letter-spacing: 2px; text-transform: uppercase; transition: background .2s;
 }
-.btn-form:hover { background: #1e4a2c; }
-@media(max-width:960px){
-  .contact-in { grid-template-columns: 1fr; gap: 48px; }
-  .form-wrap { padding: 28px 24px; }
-}
+.btn-form:hover { background: var(--green-dk); }
+@media(max-width: 960px) { .contact-in { grid-template-columns: 1fr; gap: 48px; } .form-box { padding: 28px 24px; } }
 
 /* ═══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
-.footer {
-  background: #131210; color: rgba(255,255,255,.4);
-  padding: 64px 0 28px;
-}
+.footer { background: #131210; color: rgba(255,255,255,.4); padding: 64px 0 28px; }
 .footer-in { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 .footer-top {
   display: grid; grid-template-columns: 2.2fr 1fr 1fr;
   gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.07);
 }
-.footer-logo { height: 32px; filter: brightness(0) invert(1); opacity: .45; margin-bottom: 14px; }
-.footer-brand-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem; font-weight: 500; color: rgba(255,255,255,.65); margin-bottom: 3px;
-}
-.footer-brand-tag {
-  font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase;
-  color: rgba(255,255,255,.22); margin-bottom: 14px;
-}
+.footer-logo { height: 30px; filter: brightness(0) invert(1); opacity: .45; margin-bottom: 14px; }
+.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: rgba(255,255,255,.65); margin-bottom: 3px; }
+.footer-brand-sub { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.22); margin-bottom: 14px; }
 .footer-brand p { font-size: .8125rem; font-weight: 300; line-height: 1.8; max-width: 300px; }
-.footer-col h4 {
-  font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
-  text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 16px;
-}
+.footer-col h4 { font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 16px; }
 .footer-col ul { display: flex; flex-direction: column; gap: 9px; }
-.footer-col a {
-  font-size: .8125rem; font-weight: 300; color: rgba(255,255,255,.35);
-  transition: color .15s;
-}
+.footer-col a { font-size: .8125rem; font-weight: 300; color: rgba(255,255,255,.35); transition: color .15s; }
 .footer-col a:hover { color: rgba(255,255,255,.8); }
-.footer-bot {
-  padding-top: 22px; display: flex;
-  justify-content: space-between; flex-wrap: wrap; gap: 10px;
-  font-size: .75rem; font-weight: 300;
-}
+.footer-bot { padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: .75rem; font-weight: 300; }
 .footer-bot a { color: rgba(255,255,255,.28); }
 .footer-bot a:hover { color: rgba(255,255,255,.75); }
-@media(max-width:768px){
-  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+@media(max-width: 768px) { .footer-top { grid-template-columns: 1fr; gap: 28px; } }
+
+/* ═══════════════════════════════════════════════
+   FLOATING ENQUIRY CTA
+═══════════════════════════════════════════════ */
+.float-cta {
+  position: fixed; bottom: 28px; right: 28px; z-index: 950;
+  display: flex; align-items: center; gap: 8px;
+  background: var(--green); color: #fff;
+  font-size: .7rem; font-weight: 600; letter-spacing: 1.8px;
+  text-transform: uppercase; padding: 12px 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.2);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .3s ease, transform .3s ease, background .2s;
+  pointer-events: none;
 }
+.float-cta.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.float-cta:hover { background: var(--green-dk); }
+.float-cta-icon { font-size: .875rem; }
+@media(max-width: 480px) { .float-cta { bottom: 16px; right: 16px; padding: 10px 16px; font-size: .65rem; } }
 
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════
-     UTILITY BAR
-════════════════════════════════════════════════ -->
+<!-- ═══ UTILITY BAR ═══ -->
 <div class="ubar">
   <div class="ubar-in">
     <div class="ubar-contact">
@@ -746,9 +757,7 @@ ul { list-style: none; }
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════════ -->
+<!-- ═══ NAVBAR ═══ -->
 <header class="header" id="header">
   <div class="header-in">
     <a href="#" class="logo">
@@ -760,421 +769,474 @@ ul { list-style: none; }
     </a>
     <nav class="header-nav">
       <a href="#produk">Produk</a>
-      <a href="#proses">Proses</a>
       <a href="#tentang">Tentang Kami</a>
+      <a href="#proses">Proses</a>
       <a href="#kontak">Kontak</a>
       <a href="#kontak" class="header-btn">Minta Penawaran</a>
     </nav>
-    <button class="hbur" id="hbur" aria-label="Menu">
+    <button class="hbur" id="hbur" aria-label="Buka menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mob-menu" id="mobMenu">
     <a href="#produk">Produk</a>
-    <a href="#proses">Proses</a>
     <a href="#tentang">Tentang Kami</a>
+    <a href="#proses">Proses</a>
     <a href="#kontak">Minta Penawaran</a>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════ -->
+<!-- ═══ HERO ═══ -->
 <section class="hero" id="beranda">
   <div class="hero-bg">
     <!--
-      📸 FOTO HERO — wajib diganti
-      Konsep: aerial sawah padi Jawa Timur saat golden hour (matahari terbenam)
-      ATAU close-up hamparan beras putih + daun padi segar di tampah bambu.
-      Landscape, aspect ratio minimal 16:9. Resolusi ≥2800px wide.
-      Tone hangat keemasan — sangat penting untuk kesan premium.
+      📸 FOTO HERO — full bleed, wajib diganti
+      Konsep ideal: aerial sawah padi Jawa Timur saat golden hour
+      ATAU hamparan beras putih dalam tampah bambu besar, cahaya hangat.
+      Landscape 16:9 minimum, resolusi ≥2800px. Tone hangat keemasan.
     -->
     <div class="ph c-rice">
       <div class="ph-em">🌾</div>
       <div class="ph-lbl">Hero — Full Bleed</div>
-      <div class="ph-note">Aerial sawah padi golden hour ATAU beras di tampah. Landscape 16:9. Min 2800px.</div>
+      <div class="ph-note">Aerial sawah golden hour ATAU beras di tampah. Landscape 16:9, ≥2800px.</div>
     </div>
   </div>
   <div class="hero-scrim"></div>
-  <div class="hero-body">
-    <div class="hero-origin">Lumajang, Jawa Timur &nbsp;·&nbsp; Sejak 1989</div>
-    <h1 class="hero-h1">
-      <em>Dari Sawah Jawa Timur,</em><br>
-      <strong>Ke Meja Anda.</strong>
-    </h1>
-    <p class="hero-sub">
-      Penggilingan padi dan pengolahan komoditas pertanian.
-      Menyuplai beras putih, gabah, dan bawang merah untuk
-      distributor, produsen pangan, dan pembeli institusi di seluruh Indonesia.
-    </p>
-    <div class="hero-actions">
-      <a href="#produk" class="btn-primary">Lihat Produk</a>
-      <a href="#kontak" class="btn-text">Minta Penawaran →</a>
+  <div class="hero-frame">
+    <div class="hero-body">
+      <div class="hero-kicker">Lumajang, Jawa Timur &nbsp;·&nbsp; Sejak 1989</div>
+      <h1 class="hero-h1">
+        <em>Dari Sawah Jawa Timur,</em><br>
+        <strong>Ke Meja Anda.</strong>
+      </h1>
+      <p class="hero-sub">
+        Penggilingan padi dan pengolahan komoditas pertanian.
+        Menyuplai beras putih, gabah, dan bawang merah untuk distributor,
+        produsen pangan, dan pembeli institusi di seluruh Indonesia.
+      </p>
+      <div class="hero-actions">
+        <a href="#produk" class="btn-white">Lihat Produk</a>
+        <a href="#kontak" class="btn-ghost">Minta Penawaran →</a>
+      </div>
     </div>
   </div>
   <div class="hero-scroll">Gulir</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     KEY FACTS STRIP
-════════════════════════════════════════════════ -->
+<!-- ═══ FACTS ═══ -->
 <div class="facts">
   <div class="facts-in">
-    <div class="fact">
-      <div class="fact-num">1989</div>
-      <div class="fact-lbl">Tahun Berdiri</div>
+    <div class="fact reveal">
+      <div class="fact-n">1989</div>
+      <div class="fact-l">Tahun Berdiri</div>
     </div>
-    <div class="fact">
-      <div class="fact-num">3</div>
-      <div class="fact-lbl">Komoditas Utama</div>
+    <div class="fact reveal reveal-d1">
+      <div class="fact-n">37+</div>
+      <div class="fact-l">Tahun Beroperasi</div>
     </div>
-    <div class="fact">
-      <div class="fact-num">B2B</div>
-      <div class="fact-lbl">Fokus Pasokan</div>
+    <div class="fact reveal reveal-d2">
+      <div class="fact-n">3</div>
+      <div class="fact-l">Komoditas Unggulan</div>
+    </div>
+    <div class="fact reveal reveal-d3">
+      <div class="fact-n">Jatim</div>
+      <div class="fact-l">Sumber Langsung</div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     PRODUCT CATALOG OVERVIEW  (TSP Songhe style)
-════════════════════════════════════════════════ -->
-<section id="produk">
-  <div class="sec-label">
-    <span class="sec-label-text">Produk Kami</span>
-    <div class="sec-label-line"></div>
-  </div>
+<!-- ═══ PRODUCTS AREA  (pnav sticks within this block) ═══ -->
+<div class="products-area">
 
-  <div class="catalog">
-    <div class="catalog-grid">
-
-      <!-- Card 01: Beras Putih -->
-      <a class="cat-card" href="#beras">
-        <div class="cat-photo">
-          <!--
-            📸 Thumbnail katalog Beras Putih
-            Butiran beras dalam tampah atau mangkuk putih,
-            cahaya alami, background krem. Square / 4:3.
-          -->
-          <div class="ph c-rice">
-            <div class="ph-em">🍚</div>
-            <div class="ph-lbl">Beras Putih</div>
-            <div class="ph-note">Butiran beras di tampah. 4:3.</div>
-          </div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-num">01</div>
-          <div class="cat-name">Beras Putih</div>
-          <div class="cat-name-en">White Rice</div>
-          <div class="avail-label">Kemasan Tersedia</div>
-          <div class="avail-chips">
-            <span class="chip">5 kg</span>
-            <span class="chip">10 kg</span>
-            <span class="chip">25 kg</span>
-            <span class="chip">50 kg</span>
-          </div>
-          <span class="cat-more">Lihat Detail →</span>
-        </div>
-      </a>
-
-      <!-- Card 02: Gabah -->
-      <a class="cat-card" href="#gabah">
-        <div class="cat-photo">
-          <!--
-            📸 Thumbnail katalog Gabah
-            Tumpukan gabah kering keemasan. Square / 4:3.
-          -->
-          <div class="ph c-gabah">
-            <div class="ph-em">🌾</div>
-            <div class="ph-lbl">Gabah</div>
-            <div class="ph-note">Tumpukan gabah kering. 4:3.</div>
-          </div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-num">02</div>
-          <div class="cat-name">Gabah</div>
-          <div class="cat-name-en">Paddy Grain</div>
-          <div class="avail-label">Kemasan Tersedia</div>
-          <div class="avail-chips">
-            <span class="chip">Karung 50 kg</span>
-            <span class="chip">Curah</span>
-          </div>
-          <span class="cat-more">Lihat Detail →</span>
-        </div>
-      </a>
-
-      <!-- Card 03: Bawang Merah -->
-      <a class="cat-card" href="#bawang">
-        <div class="cat-photo">
-          <!--
-            📸 Thumbnail katalog Bawang Merah
-            Tumpukan bawang merah Lumajang, warna merah kaya. Square / 4:3.
-          -->
-          <div class="ph c-onion">
-            <div class="ph-em">🧅</div>
-            <div class="ph-lbl">Bawang Merah</div>
-            <div class="ph-note">Tumpukan bawang merah. 4:3.</div>
-          </div>
-        </div>
-        <div class="cat-body">
-          <div class="cat-num">03</div>
-          <div class="cat-name">Bawang Merah</div>
-          <div class="cat-name-en">Red Shallot</div>
-          <div class="avail-label">Kemasan Tersedia</div>
-          <div class="avail-chips">
-            <span class="chip">5 kg</span>
-            <span class="chip">10 kg jaring</span>
-            <span class="chip">20 kg peti</span>
-          </div>
-          <span class="cat-more">Lihat Detail →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     PRODUCT DETAIL: 01 BERAS PUTIH
-     Royal Umbrella style — editorial story + specs
-════════════════════════════════════════════════ -->
-<section class="products">
-  <div class="pd-section" id="beras">
-    <div class="pd-layout">
-
-      <div class="pd-photo-wrap">
-        <!--
-          📸 FOTO PRODUK — Beras Putih (editorial, food photography)
-          Konsep terbaik: beras putih bersih tersaji dalam tampah bambu atau
-          keramik putih, cahaya jendela dari sisi kiri, background linen krem.
-          Rasio 4:3. Resolusi ≥2000px. Depth of field dangkal (bokeh ringan).
-        -->
-        <div class="pd-photo-main">
-          <div class="ph c-rice">
-            <div class="ph-em">🍚</div>
-            <div class="ph-lbl">Foto Produk — Beras Putih</div>
-            <div class="ph-note">Food photography butiran beras di tampah/keramik. Cahaya natural. Rasio 4:3.</div>
-          </div>
-        </div>
-        <div class="pd-photo-badge">Dipanen dari ladang Jawa Timur</div>
+  <!-- Sticky product quick-nav — sticks while products-area is on screen -->
+  <nav class="pnav" id="pnav" aria-label="Navigasi produk">
+    <div class="pnav-in">
+      <span class="pnav-label">Produk</span>
+      <div class="pnav-links">
+        <a class="pnav-link active" href="#beras" data-id="beras">
+          <span class="pnav-num">01</span> Beras Putih
+        </a>
+        <a class="pnav-link" href="#gabah" data-id="gabah">
+          <span class="pnav-num">02</span> Gabah
+        </a>
+        <a class="pnav-link" href="#bawang" data-id="bawang">
+          <span class="pnav-num">03</span> Bawang Merah
+        </a>
       </div>
+      <a href="#kontak" class="pnav-cta">Minta Penawaran →</a>
+    </div>
+  </nav>
 
-      <div class="pd-info">
-        <div class="pd-no">01 · Produk Unggulan</div>
-        <h2 class="pd-name">Beras<br>Putih</h2>
-        <div class="pd-name-en">White Rice</div>
-        <div class="pd-divider"></div>
-        <p class="pd-story">
-          Digiling dari gabah pilihan petani Jawa Timur, beras putih KSMT menghadirkan butiran seragam dengan tingkat kepecahan rendah dan aroma segar yang khas. Setiap batch digiling menggunakan mesin modern untuk memastikan penampilan bersih dan konsistensi kualitas yang diharapkan distributor dan produsen pangan.
-        </p>
-        <p class="pd-story">
-          Tersedia dalam varietas IR64, Ciherang, dan Pandan Wangi — masing-masing dengan profil tekstur dan kepulenan yang berbeda sesuai preferensi pasar Anda.
-        </p>
+  <!-- Catalog overview -->
+  <section id="produk">
+    <div style="max-width:1200px;margin:0 auto;padding:48px 32px 0;">
+      <div class="sec-rule reveal">
+        <span class="sec-rule-text">Produk Kami</span>
+        <div class="sec-rule-line"></div>
+      </div>
+    </div>
+    <div class="catalog">
+      <div class="catalog-grid">
 
-        <dl class="pd-specs">
-          <div class="pd-spec">
-            <dt>Varietas</dt>
-            <dd>IR64 · Ciherang · Pandan Wangi</dd>
+        <a class="cat-card reveal" href="#beras">
+          <div class="cat-photo">
+            <!--📸 Beras — food photography butiran beras, 4:3-->
+            <div class="ph c-rice">
+              <div class="ph-em">🍚</div>
+              <div class="ph-lbl">Beras Putih</div>
+              <div class="ph-note">Butiran beras di tampah. 4:3.</div>
+            </div>
           </div>
-          <div class="pd-spec">
-            <dt>Kemasan</dt>
-            <dd>
+          <div class="cat-body">
+            <div class="cat-num">01</div>
+            <div class="cat-name">Beras Putih</div>
+            <div class="cat-name-en">White Rice</div>
+            <div class="avail-lbl">Kemasan Tersedia</div>
+            <div class="chips">
               <span class="chip">5 kg</span>
               <span class="chip">10 kg</span>
               <span class="chip">25 kg</span>
               <span class="chip">50 kg</span>
-            </dd>
+            </div>
+            <span class="cat-more">Lihat Detail →</span>
           </div>
-          <div class="pd-spec">
-            <dt>Kualitas</dt>
-            <dd>
-              <span class="chip">Premium</span>
-              <span class="chip">Medium</span>
-            </dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Kadar Air</dt>
-            <dd>≤ 14%</dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Min. Pesanan</dt>
-            <dd>1 Ton</dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Ketersediaan</dt>
-            <dd>Sepanjang tahun</dd>
-          </div>
-        </dl>
+        </a>
 
-        <a href="#kontak" class="pd-cta">Minta Penawaran</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ═══ 02 GABAH ═══ (reversed layout) -->
-  <div class="pd-section" id="gabah">
-    <div class="pd-layout rev">
-
-      <div class="pd-photo-wrap">
-        <!--
-          📸 FOTO PRODUK — Gabah
-          Tumpukan gabah kering berwarna keemasan di lantai jemur atau
-          di dalam karung goni terbuka. Cahaya natural hangat.
-          ATAU foto aerial sawah padi menguning siap panen, drone shot.
-          Rasio 4:3. Resolusi ≥2000px.
-        -->
-        <div class="pd-photo-main">
-          <div class="ph c-gabah">
-            <div class="ph-em">🌾</div>
-            <div class="ph-lbl">Foto Produk — Gabah</div>
-            <div class="ph-note">Tumpukan gabah kering keemasan di lantai/karung. Rasio 4:3.</div>
+        <a class="cat-card reveal reveal-d1" href="#gabah">
+          <div class="cat-photo">
+            <!--📸 Gabah — tumpukan gabah kering keemasan, 4:3-->
+            <div class="ph c-gabah">
+              <div class="ph-em">🌾</div>
+              <div class="ph-lbl">Gabah</div>
+              <div class="ph-note">Tumpukan gabah kering. 4:3.</div>
+            </div>
           </div>
-        </div>
-        <div class="pd-photo-badge">Langsung dari petani lokal</div>
-      </div>
-
-      <div class="pd-info">
-        <div class="pd-no">02 · Komoditas Utama</div>
-        <h2 class="pd-name">Gabah</h2>
-        <div class="pd-name-en">Paddy Grain</div>
-        <div class="pd-divider"></div>
-        <p class="pd-story">
-          KSMT menerima, mengklasifikasikan, dan mengeringkan gabah segar langsung dari petani Jawa Timur. Dengan kadar air terkontrol dan pembersihan yang teliti, gabah kami siap diterima penggilingan padi, pengolah, maupun pedagang besar yang membutuhkan pasokan stabil.
-        </p>
-        <p class="pd-story">
-          Kemitraan langsung dengan petani lokal — tanpa rantai perantara yang panjang — memungkinkan kami mempertahankan transparansi asal-usul dan harga yang kompetitif sepanjang musim panen.
-        </p>
-
-        <dl class="pd-specs">
-          <div class="pd-spec">
-            <dt>Sumber</dt>
-            <dd>Petani lokal Jawa Timur</dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Kadar Air</dt>
-            <dd>≤ 14%</dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Kemasan</dt>
-            <dd>
+          <div class="cat-body">
+            <div class="cat-num">02</div>
+            <div class="cat-name">Gabah</div>
+            <div class="cat-name-en">Paddy Grain</div>
+            <div class="avail-lbl">Kemasan Tersedia</div>
+            <div class="chips">
               <span class="chip">Karung 50 kg</span>
               <span class="chip">Curah</span>
-            </dd>
+            </div>
+            <span class="cat-more">Lihat Detail →</span>
           </div>
-          <div class="pd-spec">
-            <dt>Min. Pesanan</dt>
-            <dd>5 Ton</dd>
+        </a>
+
+        <a class="cat-card reveal reveal-d2" href="#bawang">
+          <div class="cat-photo">
+            <!--📸 Bawang — tumpukan bawang merah Lumajang, 4:3-->
+            <div class="ph c-onion">
+              <div class="ph-em">🧅</div>
+              <div class="ph-lbl">Bawang Merah</div>
+              <div class="ph-note">Tumpukan bawang merah. 4:3.</div>
+            </div>
           </div>
-          <div class="pd-spec">
-            <dt>Ketersediaan</dt>
-            <dd>Musiman (stok tersedia)</dd>
-          </div>
-        </dl>
-
-        <a href="#kontak" class="pd-cta">Minta Penawaran</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ═══ 03 BAWANG MERAH ═══ -->
-  <div class="pd-section" id="bawang">
-    <div class="pd-layout">
-
-      <div class="pd-photo-wrap">
-        <!--
-          📸 FOTO PRODUK — Bawang Merah
-          Tumpukan bawang merah segar varietas Lumajang —
-          warna merah-ungu kaya dan menggugah selera.
-          Overhead shot atau 45° angle di atas keranjang bambu.
-          Rasio 4:3. Resolusi ≥2000px.
-        -->
-        <div class="pd-photo-main">
-          <div class="ph c-onion">
-            <div class="ph-em">🧅</div>
-            <div class="ph-lbl">Foto Produk — Bawang Merah</div>
-            <div class="ph-note">Tumpukan bawang merah Lumajang. Overhead atau 45° angle. Rasio 4:3.</div>
-          </div>
-        </div>
-        <div class="pd-photo-badge">Sentra bawang merah Lumajang</div>
-      </div>
-
-      <div class="pd-info">
-        <div class="pd-no">03 · Komoditas Spesialitas</div>
-        <h2 class="pd-name">Bawang<br>Merah</h2>
-        <div class="pd-name-en">Red Shallot</div>
-        <div class="pd-divider"></div>
-        <p class="pd-story">
-          Lumajang adalah salah satu sentra produksi bawang merah terkemuka di Indonesia — dikenal dengan cita rasa tajam dan aroma khas yang kuat. KSMT menyortir dan mengklasifikasikan bawang merah lokal untuk memenuhi kebutuhan pedagang, produsen pangan, dan pembeli institusi.
-        </p>
-        <p class="pd-story">
-          Akses langsung ke petani memungkinkan kami merespons kebutuhan pasar dengan cepat, menjaga kesegaran, dan mempertahankan konsistensi ukuran di setiap pengiriman.
-        </p>
-
-        <dl class="pd-specs">
-          <div class="pd-spec">
-            <dt>Asal</dt>
-            <dd>Lumajang, Jawa Timur</dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Kemasan</dt>
-            <dd>
+          <div class="cat-body">
+            <div class="cat-num">03</div>
+            <div class="cat-name">Bawang Merah</div>
+            <div class="cat-name-en">Red Shallot</div>
+            <div class="avail-lbl">Kemasan Tersedia</div>
+            <div class="chips">
               <span class="chip">5 kg</span>
               <span class="chip">10 kg jaring</span>
               <span class="chip">20 kg peti</span>
-            </dd>
+            </div>
+            <span class="cat-more">Lihat Detail →</span>
           </div>
-          <div class="pd-spec">
-            <dt>Kualitas</dt>
-            <dd>
-              <span class="chip">Grade A</span>
-              <span class="chip">Grade B</span>
-            </dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Min. Pesanan</dt>
-            <dd>500 kg</dd>
-          </div>
-          <div class="pd-spec">
-            <dt>Musim Panen</dt>
-            <dd>April – September (puncak)</dd>
-          </div>
-        </dl>
+        </a>
 
-        <a href="#kontak" class="pd-cta">Minta Penawaran</a>
       </div>
+    </div>
+  </section>
 
+  <!-- Product details -->
+  <section class="products">
+
+    <!-- 01 BERAS PUTIH -->
+    <div class="pd-section" id="beras">
+      <div class="pd-grid reveal">
+        <!-- Photo (DOM first for accessibility) -->
+        <div class="pd-photo-wrap">
+          <!--
+            📸 FOTO PRODUK — Beras Putih
+            Beras putih bersih dalam tampah bambu atau keramik putih.
+            Cahaya natural dari sisi kiri (window light). Background linen krem.
+            Depth of field dangkal. Rasio 4:3. Resolusi ≥2000px.
+          -->
+          <div class="pd-photo-main">
+            <div class="ph c-rice">
+              <div class="ph-em">🍚</div>
+              <div class="ph-lbl">Foto Produk — Beras Putih</div>
+              <div class="ph-note">Food photography butiran beras, tampah bambu. Cahaya natural. 4:3.</div>
+            </div>
+          </div>
+          <div class="pd-badge">Dipanen dari ladang Jawa Timur</div>
+        </div>
+        <!-- Info -->
+        <div class="pd-info">
+          <div class="pd-no">01 · Produk Unggulan</div>
+          <h2 class="pd-name">Beras<br>Putih</h2>
+          <div class="pd-name-en">White Rice</div>
+          <div class="pd-rule"></div>
+          <p class="pd-story">
+            Digiling dari gabah pilihan petani Jawa Timur, beras putih KSMT menghadirkan butiran seragam dengan tingkat kepecahan rendah dan aroma segar yang khas. Setiap batch digiling menggunakan mesin modern untuk memastikan penampilan bersih dan konsistensi kualitas.
+          </p>
+          <p class="pd-story">
+            Tersedia dalam varietas IR64, Ciherang, dan Pandan Wangi — masing-masing dengan profil tekstur dan kepulenan berbeda sesuai preferensi pasar Anda.
+          </p>
+          <dl class="pd-specs">
+            <div class="pd-spec">
+              <dt>Varietas</dt>
+              <dd>IR64 · Ciherang · Pandan Wangi</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kemasan</dt>
+              <dd>
+                <span class="chip">5 kg</span>
+                <span class="chip">10 kg</span>
+                <span class="chip">25 kg</span>
+                <span class="chip">50 kg</span>
+              </dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kualitas</dt>
+              <dd><span class="chip">Premium</span><span class="chip">Medium</span></dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kadar Air</dt>
+              <dd>≤ 14%</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Min. Pesanan</dt>
+              <dd>1 Ton</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Ketersediaan</dt>
+              <dd>Sepanjang tahun</dd>
+            </div>
+          </dl>
+          <a href="#kontak" class="btn-solid">Minta Penawaran</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 GABAH — reversed -->
+    <div class="pd-section" id="gabah">
+      <div class="pd-grid rev reveal">
+        <div class="pd-photo-wrap">
+          <!--
+            📸 FOTO PRODUK — Gabah
+            Tumpukan gabah kering keemasan di lantai jemur atau karung goni terbuka.
+            Cahaya natural hangat. ATAU aerial drone sawah padi menguning.
+            Rasio 4:3. Resolusi ≥2000px.
+          -->
+          <div class="pd-photo-main">
+            <div class="ph c-gabah">
+              <div class="ph-em">🌾</div>
+              <div class="ph-lbl">Foto Produk — Gabah</div>
+              <div class="ph-note">Gabah kering di lantai/karung, cahaya hangat. 4:3.</div>
+            </div>
+          </div>
+          <div class="pd-badge">Langsung dari petani lokal</div>
+        </div>
+        <div class="pd-info">
+          <div class="pd-no">02 · Komoditas Utama</div>
+          <h2 class="pd-name">Gabah</h2>
+          <div class="pd-name-en">Paddy Grain</div>
+          <div class="pd-rule"></div>
+          <p class="pd-story">
+            KSMT menerima, mengklasifikasikan, dan mengeringkan gabah segar langsung dari petani mitra Jawa Timur. Dengan kadar air terkontrol dan pembersihan yang teliti, gabah kami siap diterima penggilingan padi, pengolah, maupun pedagang besar yang membutuhkan pasokan stabil.
+          </p>
+          <p class="pd-story">
+            Kemitraan langsung — tanpa perantara yang panjang — memungkinkan transparansi asal-usul dan harga kompetitif sepanjang musim panen.
+          </p>
+          <dl class="pd-specs">
+            <div class="pd-spec">
+              <dt>Sumber</dt>
+              <dd>Petani lokal Jawa Timur</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kadar Air</dt>
+              <dd>≤ 14%</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kemasan</dt>
+              <dd><span class="chip">Karung 50 kg</span><span class="chip">Curah</span></dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Min. Pesanan</dt>
+              <dd>5 Ton</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Ketersediaan</dt>
+              <dd>Musiman (stok tersedia)</dd>
+            </div>
+          </dl>
+          <a href="#kontak" class="btn-solid">Minta Penawaran</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 BAWANG MERAH -->
+    <div class="pd-section" id="bawang">
+      <div class="pd-grid reveal">
+        <div class="pd-photo-wrap">
+          <!--
+            📸 FOTO PRODUK — Bawang Merah
+            Tumpukan bawang merah segar — warna merah-ungu kaya, menggugah selera.
+            Overhead shot atau 45° di atas keranjang bambu.
+            Rasio 4:3. Resolusi ≥2000px.
+          -->
+          <div class="pd-photo-main">
+            <div class="ph c-onion">
+              <div class="ph-em">🧅</div>
+              <div class="ph-lbl">Foto Produk — Bawang Merah</div>
+              <div class="ph-note">Bawang merah Lumajang, overhead/45°. 4:3.</div>
+            </div>
+          </div>
+          <div class="pd-badge">Sentra bawang merah Lumajang</div>
+        </div>
+        <div class="pd-info">
+          <div class="pd-no">03 · Komoditas Spesialitas</div>
+          <h2 class="pd-name">Bawang<br>Merah</h2>
+          <div class="pd-name-en">Red Shallot</div>
+          <div class="pd-rule"></div>
+          <p class="pd-story">
+            Lumajang adalah salah satu sentra produksi bawang merah terkemuka di Indonesia — dikenal dengan cita rasa tajam dan aroma khas yang kuat. KSMT menyortir dan mengklasifikasikan bawang merah lokal untuk pedagang, produsen pangan, dan pembeli institusi.
+          </p>
+          <p class="pd-story">
+            Akses langsung ke petani memungkinkan kami merespons kebutuhan pasar dengan cepat, menjaga kesegaran, dan mempertahankan konsistensi ukuran di setiap pengiriman.
+          </p>
+          <dl class="pd-specs">
+            <div class="pd-spec">
+              <dt>Asal</dt>
+              <dd>Lumajang, Jawa Timur</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kemasan</dt>
+              <dd>
+                <span class="chip">5 kg</span>
+                <span class="chip">10 kg jaring</span>
+                <span class="chip">20 kg peti</span>
+              </dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Kualitas</dt>
+              <dd><span class="chip">Grade A</span><span class="chip">Grade B</span></dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Min. Pesanan</dt>
+              <dd>500 kg</dd>
+            </div>
+            <div class="pd-spec">
+              <dt>Musim Panen</dt>
+              <dd>April – September (puncak)</dd>
+            </div>
+          </dl>
+          <a href="#kontak" class="btn-solid">Minta Penawaran</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div><!-- /products-area -->
+
+<!-- ═══ WHY KSMT — right after products ═══ -->
+<section class="why reveal" id="keunggulan">
+  <div class="why-in">
+    <div class="why-head">
+      <div class="sec-rule">
+        <span class="sec-rule-text">Mengapa KSMT</span>
+        <div class="sec-rule-line"></div>
+      </div>
+      <h2>Sumber Lokal.<br>Kualitas Konsisten.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">🌾</div>
+        <div class="why-title">Petani Mitra Langsung</div>
+        <p class="why-desc">Kemitraan langsung dengan petani Jawa Timur menghilangkan perantara — menjaga keterlacakan asal-usul, transparansi harga, dan kualitas dari ladang ke fasilitas kami.</p>
+      </div>
+      <div class="why-item reveal reveal-d1">
+        <div class="why-icon">⚙️</div>
+        <div class="why-title">Fasilitas Penggilingan Modern</div>
+        <p class="why-desc">Mesin penggilingan modern menghasilkan butiran seragam dan kadar air terkontrol. Standar konsistensi yang dibutuhkan distributor dan produsen pangan skala besar.</p>
+      </div>
+      <div class="why-item reveal reveal-d2">
+        <div class="why-icon">🚚</div>
+        <div class="why-title">Pasokan B2B Fleksibel</div>
+        <p class="why-desc">Dari 500 kg hingga puluhan ton — kami melayani distributor, produsen pangan, dan pembeli institusi dengan kemasan dan skema pengiriman yang menyesuaikan kebutuhan Anda.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     FULL-BLEED PHOTO DIVIDER
-════════════════════════════════════════════════ -->
+<!-- ═══ PHOTO STRIP ═══ -->
 <div class="strip">
   <div class="strip-img">
-    <img src="/assets/photos/facility/grain-warehouse.jpg" alt="Fasilitas KSMT">
+    <img src="/assets/photos/facility/grain-warehouse.jpg" alt="Fasilitas gudang KSMT" loading="lazy" decoding="async">
   </div>
-  <div class="strip-copy">
+  <div class="strip-body">
     <h3><em>Dari ladang Jawa Timur,</em> langsung ke rantai pasokan Anda</h3>
     <p>Gabah · Beras Putih · Bawang Merah</p>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     PROCESS
-════════════════════════════════════════════════ -->
+<!-- ═══ ABOUT ═══ -->
+<section class="about reveal" id="tentang">
+  <div class="about-in">
+    <div class="about-photo">
+      <!--
+        📸 FOTO TENTANG KAMI
+        Interior pabrik penggilingan atau aerial kompleks KSMT.
+        Portrait 3:4. Menunjukkan skala fasilitas operasional.
+      -->
+      <div class="about-photo-frame">
+        <div class="ph c-mill" style="min-height:360px">
+          <div class="ph-em">🏭</div>
+          <div class="ph-lbl">Foto Fasilitas</div>
+          <div class="ph-note">Interior pabrik atau aerial kompleks. Portrait 3:4.</div>
+        </div>
+      </div>
+      <div class="about-badge">
+        <div class="yr">1989</div>
+        <div class="yl">Berdiri</div>
+      </div>
+    </div>
+    <div class="about-copy">
+      <div class="about-copy-label">Tentang Kami</div>
+      <h2>Berakar dari Tradisi Pertanian Jawa Timur</h2>
+      <p>PT Karya Setya Mustikatama (KSMT) adalah perusahaan pengolahan komoditas pertanian yang berlokasi di Lumajang, Jawa Timur — salah satu sentra produksi padi dan hortikultura terbesar di Indonesia.</p>
+      <p>Selama lebih dari tiga dekade, kami bermitra erat dengan petani lokal untuk mengolah gabah, beras putih, dan bawang merah — menyuplai distributor, produsen pangan, dan pembeli institusi di seluruh Indonesia dengan konsistensi yang dapat diandalkan.</p>
+      <p>Berlokasi di Jl. Raya Lumajang–Tempeh KM 7, fasilitas kami berada di jantung koridor pertanian Jawa Timur, memungkinkan pasokan yang cepat, segar, dan kompetitif sepanjang tahun.</p>
+      <div class="about-stats">
+        <div class="astat"><div class="astat-n">37+</div><div class="astat-l">Tahun Operasi</div></div>
+        <div class="astat"><div class="astat-n">3</div><div class="astat-l">Komoditas</div></div>
+        <div class="astat"><div class="astat-n">Jatim</div><div class="astat-l">Sumber Langsung</div></div>
+      </div>
+      <a href="#kontak" class="btn-solid">Hubungi Kami</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
 <section class="process" id="proses">
   <div class="process-in">
-    <div class="process-hd">
+    <div class="process-hd reveal">
+      <div class="sec-rule">
+        <span class="sec-rule-text">Cara Kerja Kami</span>
+        <div class="sec-rule-line"></div>
+      </div>
       <h2>Dari Ladang ke Pengiriman</h2>
       <p>Empat tahap yang memastikan konsistensi kualitas dari panen mentah hingga produk siap pasar.</p>
     </div>
     <div class="process-steps">
 
-      <div class="pstep">
+      <div class="pstep reveal">
         <div class="pstep-photo">
-          <!--📸 Petani panen padi / close-up tangan petani-->
+          <!--📸 Petani panen padi / close-up tangan petani di sawah-->
           <div class="ph c-farm">
             <div class="ph-em">👨‍🌾</div>
             <div class="ph-lbl">Pengadaan</div>
@@ -1188,25 +1250,25 @@ ul { list-style: none; }
         </div>
       </div>
 
-      <div class="pstep">
+      <div class="pstep reveal reveal-d1">
         <div class="pstep-photo">
-          <!--📸 Lantai jemur gabah / mesin dryer-->
+          <!--📸 Lantai jemur gabah / mesin pengering-->
           <div class="ph c-dry">
             <div class="ph-em">☀️</div>
             <div class="ph-lbl">Pengeringan</div>
-            <div class="ph-note">Lantai jemur gabah atau mesin pengering</div>
+            <div class="ph-note">Lantai jemur atau mesin pengering</div>
           </div>
         </div>
         <div class="pstep-body">
           <div class="pstep-n">02</div>
           <div class="pstep-title">Pengeringan</div>
-          <p class="pstep-desc">Gabah dikeringkan hingga kadar air ≤14% menggunakan lantai jemur dan mesin pengering, memastikan hasil gilingan optimal dan daya simpan lebih baik.</p>
+          <p class="pstep-desc">Gabah dikeringkan hingga kadar air ≤14% untuk hasil gilingan optimal dan daya simpan lebih baik.</p>
         </div>
       </div>
 
-      <div class="pstep">
+      <div class="pstep reveal reveal-d2">
         <div class="pstep-photo">
-          <!--📸 Mesin penggiling padi — huller, whitener-->
+          <!--📸 Mesin penggiling — huller, whitener, polisher-->
           <div class="ph c-mill">
             <div class="ph-em">⚙️</div>
             <div class="ph-lbl">Penggilingan</div>
@@ -1216,13 +1278,13 @@ ul { list-style: none; }
         <div class="pstep-body">
           <div class="pstep-n">03</div>
           <div class="pstep-title">Penggilingan</div>
-          <p class="pstep-desc">Proses pengupasan, pemutihan, dan pemolesan menggunakan mesin modern menghasilkan beras putih bersih dengan butiran seragam dan tingkat kepecahan rendah.</p>
+          <p class="pstep-desc">Pengupasan, pemutihan, dan pemolesan menggunakan mesin modern menghasilkan beras putih bersih dengan butiran seragam dan kepecahan rendah.</p>
         </div>
       </div>
 
-      <div class="pstep">
+      <div class="pstep reveal reveal-d3">
         <div class="pstep-photo">
-          <!--📸 Lini pengemasan — pengisian karung-->
+          <!--📸 Lini pengemasan — pengisian dan jahit karung-->
           <div class="ph c-pack">
             <div class="ph-em">📦</div>
             <div class="ph-lbl">Pengemasan</div>
@@ -1240,122 +1302,49 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     KEUNGGULAN
-════════════════════════════════════════════════ -->
-<section class="why" id="keunggulan">
-  <div class="why-in">
-    <div class="sec-label" style="padding:0; margin-bottom:14px;">
-      <span class="sec-label-text">Mengapa KSMT</span>
-      <div class="sec-label-line"></div>
-    </div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:600;color:var(--text);line-height:1.2;max-width:480px;">
-      Sumber Lokal. Kualitas Konsisten.
-    </h2>
-    <div class="why-cols">
-      <div class="why-item">
-        <div class="why-item-icon">🌾</div>
-        <h3>Petani Mitra Langsung</h3>
-        <p>Kemitraan langsung dengan petani Jawa Timur menghilangkan perantara yang tidak perlu — menjaga keterlacakan asal-usul, transparansi harga, dan kualitas dari ladang ke fasilitas kami.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-item-icon">⚙️</div>
-        <h3>Fasilitas Penggilingan Modern</h3>
-        <p>Mesin penggilingan modern menghasilkan butiran seragam dan kadar air terkontrol. Setiap batch diproses dengan standar konsistensi yang dibutuhkan distributor dan produsen pangan skala besar.</p>
-      </div>
-      <div class="why-item">
-        <div class="why-item-icon">🚚</div>
-        <h3>Pasokan B2B Fleksibel</h3>
-        <p>Dari 500 kg hingga puluhan ton — kami melayani distributor, produsen pangan, dan pembeli institusi dengan pilihan kemasan dan skema pengiriman yang menyesuaikan kebutuhan Anda.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════════════ -->
-<section class="about" id="tentang">
-  <div class="about-in">
-    <div class="about-photo">
-      <!--
-        📸 FOTO TENTANG KAMI
-        Interior pabrik penggilingan atau foto aerial kompleks KSMT.
-        Portrait 3:4. Menunjukkan skala fasilitas operasional.
-      -->
-      <div class="about-photo-frame">
-        <div class="ph c-mill" style="min-height:360px;">
-          <div class="ph-em">🏭</div>
-          <div class="ph-lbl">Foto Fasilitas</div>
-          <div class="ph-note">Interior pabrik atau aerial kompleks. Portrait 3:4.</div>
-        </div>
-      </div>
-      <div class="about-year-badge">
-        <div class="yr">1989</div>
-        <div class="yl">Berdiri</div>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="about-text-head">Tentang Kami</div>
-      <h2>Berakar dari Tradisi Pertanian Jawa Timur</h2>
-      <p>PT Karya Setya Mustikatama (KSMT) adalah perusahaan pengolahan komoditas pertanian yang berlokasi di Lumajang, Jawa Timur — salah satu sentra produksi padi dan hortikultura terbesar di Indonesia.</p>
-      <p>Selama lebih dari tiga dekade, kami bermitra erat dengan petani lokal untuk mengolah gabah, beras putih, dan bawang merah — menyuplai distributor, produsen pangan, dan pembeli institusi di seluruh Indonesia dengan konsistensi yang dapat diandalkan.</p>
-      <p>Berlokasi di Jl. Raya Lumajang–Tempeh KM 7, fasilitas kami berada di jantung koridor pertanian Jawa Timur, memungkinkan pasokan yang cepat, segar, dan kompetitif sepanjang tahun.</p>
-      <div class="about-stats">
-        <div class="astat"><div class="n">37+</div><div class="l">Tahun Operasi</div></div>
-        <div class="astat"><div class="n">3</div><div class="l">Komoditas</div></div>
-        <div class="astat"><div class="n">Jatim</div><div class="l">Sumber Langsung</div></div>
-      </div>
-      <a href="#kontak" class="btn-primary" style="color:var(--white);background:var(--green);">Hubungi Kami</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     CONTACT
-════════════════════════════════════════════════ -->
+<!-- ═══ CONTACT ═══ -->
 <section class="contact" id="kontak">
   <div class="contact-in">
-    <div class="contact-info">
-      <div class="contact-info-head">Hubungi Kami</div>
+    <div class="contact-info reveal">
+      <div class="contact-info-label">Hubungi Kami</div>
       <h2>Minta Penawaran</h2>
       <p>Sampaikan kebutuhan Anda — komoditas, volume, kualitas, dan lokasi pengiriman. Kami merespons dalam satu hari kerja.</p>
       <div class="ci-rows">
         <div class="ci-row">
-          <span class="ci-icon">📍</span>
+          <span class="ci-ico">📍</span>
           <div class="ci-content">
             <div class="ci-lbl">Alamat</div>
             <div class="ci-val">Jl. Raya Lumajang–Tempeh KM 7,<br>Lumajang 67371, Jawa Timur</div>
           </div>
         </div>
         <div class="ci-row">
-          <span class="ci-icon">📞</span>
+          <span class="ci-ico">📞</span>
           <div class="ci-content">
             <div class="ci-lbl">Telepon</div>
             <div class="ci-val"><a href="tel:+6233488788">+62 334 887888</a></div>
           </div>
         </div>
         <div class="ci-row">
-          <span class="ci-icon">✉️</span>
+          <span class="ci-ico">✉️</span>
           <div class="ci-content">
             <div class="ci-lbl">Email</div>
             <div class="ci-val"><a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a></div>
           </div>
         </div>
       </div>
-      <div class="hours-table">
+      <div class="hours-box">
         <table>
           <tr><td>Senin – Jumat</td><td>07:00 – 16:00 WIB</td></tr>
           <tr><td>Sabtu</td><td>07:00 – 15:00 WIB</td></tr>
           <tr><td>Minggu</td><td>Tutup</td></tr>
         </table>
       </div>
-      <div class="map-frame">
-        <iframe src="https://maps.google.com/maps?q=PT+Mustikatama+Lumajang+East+Java&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi KSMT"></iframe>
+      <div class="map-box">
+        <iframe src="https://maps.google.com/maps?q=PT+Mustikatama+Lumajang+East+Java&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi PT Karya Setya Mustikatama"></iframe>
       </div>
     </div>
 
-    <div class="form-wrap">
+    <div class="form-box reveal reveal-d1">
       <h3>Kirim Pertanyaan</h3>
       <form action="https://formsubmit.co/marketing@mustikatama.com" method="POST">
         <input type="hidden" name="_subject" value="Pertanyaan Produk KSMT">
@@ -1385,7 +1374,7 @@ ul { list-style: none; }
         </div>
         <div class="fg">
           <label>Keterangan Kebutuhan</label>
-          <textarea name="message" placeholder="Volume yang dibutuhkan, kualitas, kemasan, lokasi pengiriman…" required></textarea>
+          <textarea name="message" placeholder="Volume, kualitas, kemasan, lokasi pengiriman…" required></textarea>
         </div>
         <button type="submit" class="btn-form">Kirim Pertanyaan</button>
       </form>
@@ -1393,16 +1382,14 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════ -->
+<!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div class="footer-in">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="/assets/brand/Logo%20Mustikatama%20v2.png" alt="Mustikatama" class="footer-logo">
+        <img src="/assets/brand/Logo%20Mustikatama%20v2.png" alt="Mustikatama" class="footer-logo" loading="lazy">
         <div class="footer-brand-name">PT Karya Setya Mustikatama</div>
-        <div class="footer-brand-tag">KSMT · Est. 1989 · Lumajang, Jawa Timur</div>
+        <div class="footer-brand-sub">KSMT · Est. 1989 · Lumajang, Jawa Timur</div>
         <p>Penggilingan padi dan pengolahan komoditas pertanian. Menyuplai distributor, produsen pangan, dan pembeli institusi di seluruh Indonesia.</p>
       </div>
       <div class="footer-col">
@@ -1430,24 +1417,90 @@ ul { list-style: none; }
   </div>
 </footer>
 
-<script>
-// Mobile menu
-document.getElementById('hbur').addEventListener('click', function() {
-  document.getElementById('mobMenu').classList.toggle('open');
-});
+<!-- ═══ FLOATING CTA ═══ -->
+<a href="#kontak" class="float-cta" id="floatCta" aria-label="Minta penawaran">
+  <span class="float-cta-icon">✉</span>
+  Minta Penawaran
+</a>
 
-// Smooth scroll for catalog cards
-document.querySelectorAll('.cat-card').forEach(function(card) {
-  card.addEventListener('click', function(e) {
-    e.preventDefault();
-    var target = document.querySelector(card.getAttribute('href'));
-    if (target) {
-      var offset = 34 + 66; // ubar + header
-      var top = target.getBoundingClientRect().top + window.scrollY - offset - 32;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-    }
+<script>
+(function() {
+  'use strict';
+
+  /* ── Mobile menu ── */
+  document.getElementById('hbur').addEventListener('click', function() {
+    document.getElementById('mobMenu').classList.toggle('open');
   });
-});
+
+  /* ── Scroll reveal ── */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el) { revealObs.observe(el); });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  /* ── Pnav scrollspy — highlight active product ── */
+  var pnavLinks = document.querySelectorAll('.pnav-link');
+  var productIds = ['beras', 'gabah', 'bawang'];
+  var pnavObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        pnavLinks.forEach(function(a) { a.classList.remove('active'); });
+        var link = document.querySelector('.pnav-link[data-id="' + e.target.id + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { threshold: 0.35 });
+  productIds.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) pnavObs.observe(el);
+  });
+
+  /* ── Catalog card smooth scroll ── */
+  document.querySelectorAll('.cat-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(card.getAttribute('href'));
+      if (target) {
+        var offset = 34 + 66 + 46 + 24; /* ubar + header + pnav + breathing room */
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── Floating CTA — show after hero exits viewport ── */
+  var floatCta = document.getElementById('floatCta');
+  var heroEl   = document.getElementById('beranda');
+  var heroObs  = new IntersectionObserver(function(entries) {
+    if (!entries[0].isIntersecting) {
+      floatCta.classList.add('show');
+    } else {
+      floatCta.classList.remove('show');
+    }
+  }, { threshold: 0 });
+  if (heroEl) heroObs.observe(heroEl);
+
+  /* ── Hide float CTA when contact section is in view ── */
+  var contactEl = document.getElementById('kontak');
+  var contactObs = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      floatCta.classList.remove('show');
+    } else if (heroEl && heroEl.getBoundingClientRect().bottom < 0) {
+      floatCta.classList.add('show');
+    }
+  }, { threshold: 0.1 });
+  if (contactEl) contactObs.observe(contactEl);
+
+})();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
