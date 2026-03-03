@@ -3,685 +3,629 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PT Karya Setya Mustikatama – Rice & Agricultural Commodity Processing, East Java</title>
+<title>PT Karya Setya Mustikatama – Rice &amp; Agricultural Commodity Processing, East Java</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231B6830'/><text x='16' y='22' font-family='serif' font-weight='900' font-size='9' fill='%23F0C200' text-anchor='middle'>KSMT</text></svg>">
-<meta name="description" content="Rice milling and agricultural commodity processing in Lumajang, East Java. PT Karya Setya Mustikatama supplies white rice, paddy grain and red shallot to distributors and food manufacturers across Indonesia.">
-<meta name="keywords" content="rice milling Indonesia, beras putih East Java, gabah processor Lumajang, bawang merah supplier, agricultural commodity Java, KSMT rice manufacturer">
+<meta name="description" content="Rice milling and agricultural commodity processing in Lumajang, East Java. PT Karya Setya Mustikatama supplies white rice, paddy grain and red shallot to distributors and food manufacturers.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://ksmt.mustikatama.com/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ksmt.mustikatama.com/">
-<meta property="og:title" content="PT Karya Setya Mustikatama – Rice & Agri Processing, East Java">
-<meta property="og:description" content="White rice, paddy grain and red shallot — processed and supplied from East Java's agricultural heartland.">
+<meta property="og:title" content="PT Karya Setya Mustikatama – Rice &amp; Agri Processing, East Java">
+<meta property="og:description" content="White rice, paddy grain and red shallot — processed from East Java's agricultural heartland.">
 <meta property="og:image" content="https://ksmt.mustikatama.com/assets/photos/facility/grain-warehouse.jpg">
 
-<!-- Schema -->
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FoodEstablishment",
-  "name":"PT Karya Setya Mustikatama",
-  "alternateName":"KSMT",
-  "description":"Rice milling and agricultural commodity processing in Lumajang, East Java. Supplying white rice, paddy grain and red shallot to B2B buyers.",
-  "foundingDate":"1989",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Jl. Raya Lumajang–Tempeh Km 7",
-    "addressLocality":"Lumajang",
-    "addressRegion":"East Java",
-    "postalCode":"67371",
-    "addressCountry":"ID"
-  },
-  "telephone":"+62-334-887888",
-  "email":"marketing@mustikatama.com",
-  "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"16:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"15:00"}
-  ]
-}
+{"@context":"https://schema.org","@type":"FoodEstablishment","name":"PT Karya Setya Mustikatama","alternateName":"KSMT","foundingDate":"1989","address":{"@type":"PostalAddress","streetAddress":"Jl. Raya Lumajang–Tempeh Km 7","addressLocality":"Lumajang","addressRegion":"East Java","postalCode":"67371","addressCountry":"ID"},"telephone":"+62-334-887888","email":"marketing@mustikatama.com","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"15:00"}]}
 </script>
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ─── TOKENS ─── */
-:root {
-  --green:       #1B6830;
-  --green-hover: #155225;
-  --yellow:      #F0C200;
-  --yellow-lt:   #FDF8E8;
-  --yellow-md:   #F5ECC8;
-  --cream:       #F7F4EE;
-  --amber:       #C8853A;
-  --dark:        #1A1A18;
-  --text:        #2E2B26;
-  --muted:       #7A7060;
-  --border:      #E2DDD5;
-  --white:       #ffffff;
-  --nav-h:       64px;
+:root{
+  --green:    #1B6830;
+  --green-lt: #EEF5F1;
+  --yellow:   #F0C200;
+  --cream:    #FAF8F4;
+  --stone:    #F2EFE9;
+  --dark:     #1A1916;
+  --text:     #2C2A26;
+  --muted:    #7A7670;
+  --border:   #E8E4DC;
+  --white:    #ffffff;
+  --radius:   4px;
+  --nav-h:    68px;
 }
 
 /* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Open Sans',system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
-ul{list-style:none}
 
-/* ─── TOPBAR ─── */
-.topbar{background:var(--dark);color:rgba(255,255,255,.65);font-size:11.5px;padding:0;position:sticky;top:0;z-index:1001}
-.topbar-inner{display:flex;align-items:center;justify-content:space-between;height:34px;max-width:1160px;margin:0 auto;padding:0 24px}
-.topbar-left{display:flex;align-items:center;gap:20px}
-.topbar-left a{color:rgba(255,255,255,.65);transition:color .2s}
-.topbar-left a:hover{color:var(--yellow)}
-.topbar-sep{opacity:.3}
-.topbar-langs{display:flex;align-items:center;gap:2px}
-.topbar-lang{background:none;border:none;color:rgba(255,255,255,.55);font-size:11px;font-weight:600;letter-spacing:.5px;cursor:pointer;padding:4px 8px;transition:color .2s;font-family:'Open Sans',sans-serif}
-.topbar-lang:hover{color:#fff}
-.topbar-lang.active{color:var(--yellow);font-weight:700}
+/* ─── GOOGLE TRANSLATE (hidden) ─── */
 #google_translate_element{display:none!important}
-.goog-te-banner-frame.skiptranslate{display:none!important}
+.goog-te-banner-frame{display:none!important}
 .goog-te-gadget{display:none!important}
 body{top:0!important}
 
+/* ─── TOPBAR ─── */
+.topbar{background:#111;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.3px;position:sticky;top:0;z-index:1001}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:32px;display:flex;align-items:center;justify-content:space-between}
+.topbar-left{display:flex;align-items:center;gap:16px}
+.topbar-left a{color:rgba(255,255,255,.5);transition:color .15s}
+.topbar-left a:hover{color:rgba(255,255,255,.85)}
+.topbar-sep{opacity:.2}
+.topbar-langs{display:flex;align-items:center;gap:1px}
+.t-lang{background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:10.5px;font-weight:500;color:rgba(255,255,255,.4);padding:4px 7px;letter-spacing:.3px;transition:color .15s}
+.t-lang:hover{color:rgba(255,255,255,.8)}
+.t-lang.active{color:var(--yellow);font-weight:600}
+
 /* ─── NAVBAR ─── */
-.navbar{position:sticky;top:34px;z-index:1000;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.navbar .container{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:1160px;margin:0 auto;padding:0 24px}
-.nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo img{height:44px;width:auto;object-fit:contain}
-.nav-logo-text{display:flex;flex-direction:column;line-height:1.2}
-.nav-logo-name{font-family:'Merriweather',serif;font-size:1.1rem;font-weight:900;color:var(--dark);letter-spacing:.5px}
-.nav-logo-sub{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:.875rem;font-weight:600;color:var(--text);padding-bottom:2px;border-bottom:2px solid transparent;transition:.2s}
-.nav-links a:hover{color:var(--green);border-bottom-color:var(--yellow)}
-.nav-cta{display:inline-block;background:var(--green);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.75px;text-transform:uppercase;padding:9px 20px;border:2px solid var(--green);transition:.2s}
-.nav-cta:hover{background:var(--green-hover);border-color:var(--green-hover)}
+.navbar{position:sticky;top:32px;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nb{max-width:1200px;margin:0 auto;padding:0 32px;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
+.nb-logo{display:flex;align-items:center;gap:14px}
+.nb-logo img{height:40px;width:auto;object-fit:contain}
+.nb-logo-text{line-height:1.25}
+.nb-logo-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--dark);letter-spacing:.5px}
+.nb-logo-sub{font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.nb-links{display:flex;gap:32px;align-items:center}
+.nb-links a{font-size:.8125rem;font-weight:500;color:var(--muted);letter-spacing:.3px;transition:color .15s;padding-bottom:1px;border-bottom:1px solid transparent}
+.nb-links a:hover{color:var(--dark);border-bottom-color:var(--yellow)}
+.nb-cta{background:var(--green);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:10px 22px;border-radius:2px;transition:background .2s}
+.nb-cta:hover{background:#145225;color:#fff;border-bottom:none}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:none;background:none}
-.hamburger span{display:block;width:24px;height:2px;background:var(--dark);transition:.3s}
-.nav-mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:16px 24px;gap:4px}
-.nav-mobile-menu.open{display:flex}
-.nav-mobile-menu a{padding:10px 0;font-size:.9rem;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--dark);transition:.3s}
+.mobile-menu{display:none;flex-direction:column;gap:0;background:var(--white);border-top:1px solid var(--border)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:14px 32px;font-size:.9rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--border)}
 
-/* ─── UTILITIES ─── */
-.container{max-width:1160px;margin:0 auto;padding:0 24px}
-.section-tag{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
-.section-tag::before{content:'';display:block;width:20px;height:2px;background:var(--amber);flex-shrink:0}
-.section-title{font-family:'Merriweather',serif;font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:900;color:var(--dark);line-height:1.25;margin-bottom:8px}
-.section-lead{font-size:1rem;color:var(--muted);max-width:640px;line-height:1.8;margin-bottom:40px}
-.divider-amber{width:48px;height:3px;background:var(--amber);margin:16px 0 24px}
-.divider-yellow{width:48px;height:3px;background:var(--yellow);margin:16px 0 24px}
-.btn-green{display:inline-block;background:var(--green);color:#fff;font-family:'Open Sans',sans-serif;font-weight:700;font-size:.875rem;letter-spacing:1px;text-transform:uppercase;padding:13px 28px;border:2px solid var(--green);cursor:pointer;transition:.2s}
-.btn-green:hover{background:var(--green-hover);border-color:var(--green-hover)}
-.btn-outline-white{display:inline-block;background:transparent;color:#fff;font-size:.875rem;font-weight:600;letter-spacing:.5px;padding:13px 28px;border:2px solid rgba(255,255,255,.6);transition:.2s}
-.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+/* ─── HERO — light split layout ─── */
+.hero{background:var(--cream);min-height:calc(100vh - var(--nav-h) - 32px);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-text-col{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 80px;max-width:640px}
+.hero-eyebrow{font-size:10.5px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--green);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--green)}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:600;line-height:1.15;color:var(--dark);margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--green)}
+.hero-body{font-size:.9375rem;color:var(--muted);line-height:1.85;max-width:420px;margin-bottom:40px;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:14px 30px;border-radius:2px;transition:background .2s}
+.btn-primary:hover{background:#145225}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;font-size:.8125rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--text);padding-bottom:1px;transition:color .2s}
+.btn-secondary:hover{color:var(--green);border-bottom-color:var(--green)}
+.hero-img-col{position:relative;overflow:hidden}
+.hero-img-col img{width:100%;height:100%;object-fit:cover}
+/* DUMMY placeholder for hero */
+.photo-dummy{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:32px;text-align:center}
+.pd-icon{font-size:3rem;opacity:.7}
+.pd-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.8}
+.pd-hint{font-size:10px;opacity:.5;max-width:180px;line-height:1.6;letter-spacing:.3px}
+.dummy-paddy{background:linear-gradient(160deg,#b5a56a,#7a6e3a)}
+.dummy-rice{background:linear-gradient(160deg,#e8dfc8,#c4b890)}
+.dummy-gabah{background:linear-gradient(160deg,#a09550,#6e6630)}
+.dummy-onion{background:linear-gradient(160deg,#9a4455,#6a2535)}
+.dummy-mill{background:linear-gradient(160deg,#5a8060,#2e5038)}
+.dummy-dry{background:linear-gradient(160deg,#c8a050,#8a6820)}
+.dummy-pack{background:linear-gradient(160deg,#7890a0,#485a68)}
+.dummy-farm{background:linear-gradient(160deg,#90a840,#4e6418)}
 
-/* ─── DUMMY PHOTO PLACEHOLDERS ─── */
-.photo-dummy{width:100%;height:100%;background:linear-gradient(135deg,#b8955a 0%,#7a5c2e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center}
-.photo-dummy-icon{font-size:2.5rem;opacity:.8}
-.photo-dummy-label{font-family:'Open Sans',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.9)}
-.photo-dummy-hint{font-family:'Open Sans',monospace;font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.5px;max-width:200px;line-height:1.5}
-.photo-dummy--green{background:linear-gradient(135deg,#2d6e3e 0%,#1b4424 100%)}
-.photo-dummy--light{background:linear-gradient(135deg,#d4b87a 0%,#a07840 100%)}
-.photo-dummy--onion{background:linear-gradient(135deg,#8b3a4a 0%,#5c1e2a 100%)}
-.photo-dummy--paddy{background:linear-gradient(135deg,#8a9640 0%,#4a5c1c 100%)}
-.photo-dummy--aerial{background:linear-gradient(135deg,#4a7060 0%,#1e3a2e 100%)}
+/* ─── PRODUCT QUICK-NAV ─── */
+.product-nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:calc(32px + var(--nav-h));z-index:90}
+.product-nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:0}
+.pnav-item{padding:18px 28px;font-size:.8125rem;font-weight:500;color:var(--muted);letter-spacing:.5px;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
+.pnav-item:hover,.pnav-item.active{color:var(--green);border-bottom-color:var(--green)}
+.pnav-divider{width:1px;height:20px;background:var(--border);flex-shrink:0}
 
-/* ─── HERO ─── */
-.hero{position:relative;min-height:580px;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:url('/assets/photos/facility/grain-warehouse.jpg');background-size:cover;background-position:center 45%;filter:brightness(.38) saturate(1.15)}
-.hero-bg-dummy{position:absolute;inset:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,30,15,.78) 0%,rgba(60,40,10,.35) 100%);z-index:1}
-.hero-content{position:relative;z-index:2;padding:100px 0}
-.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--yellow)}
-.hero h1{font-family:'Merriweather',serif;font-size:clamp(2rem,4vw,3.25rem);font-weight:900;color:#fff;max-width:680px;line-height:1.2;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--yellow)}
-.hero-desc{font-size:1rem;color:rgba(255,255,255,.82);max-width:540px;margin-bottom:36px;line-height:1.8}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.hero-badges{margin-top:52px;display:flex;gap:12px;flex-wrap:wrap}
-.hero-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.88);font-size:11px;font-weight:600;letter-spacing:1px;padding:6px 16px;text-transform:uppercase}
+/* ─── SECTION SHARED ─── */
+.section-eyebrow{font-size:10.5px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.section-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.875rem);font-weight:600;color:var(--dark);line-height:1.2;margin-bottom:16px}
+.section-sub{font-size:.9375rem;color:var(--muted);line-height:1.85;font-weight:300}
 
-/* ─── HARVEST STRIP ─── */
-.harvest-strip{background:var(--yellow);border-top:3px solid var(--amber);padding:0}
-.harvest-strip-inner{display:grid;grid-template-columns:repeat(5,1fr);max-width:1160px;margin:0 auto}
-.harvest-cell{padding:22px 16px;text-align:center;border-right:1px solid rgba(0,0,0,.1)}
-.harvest-cell:last-child{border-right:none}
-.harvest-num{font-family:'Merriweather',serif;font-size:1.625rem;font-weight:900;color:var(--dark);line-height:1}
-.harvest-lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,0,0,.5);margin-top:6px}
+/* ─── PRODUCTS ─── */
+/* Intro strip */
+.products-intro{padding:88px 0 64px;background:var(--white);text-align:center}
+.products-intro .section-heading{max-width:560px;margin:0 auto 16px}
+.products-intro .section-sub{max-width:560px;margin:0 auto}
 
-/* ─── ABOUT ─── */
-.about{padding:88px 0;background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.about-text p{color:var(--muted);line-height:1.85;margin-bottom:16px;font-size:.9375rem}
-.about-photo-wrap{position:relative}
-.about-photo-wrap .photo-frame{width:100%;aspect-ratio:4/3;overflow:hidden}
-.about-photo-wrap img{width:100%;height:100%;object-fit:cover}
-.about-badge{position:absolute;bottom:-16px;left:-16px;background:var(--green);padding:18px 22px;text-align:center}
-.about-badge .num{font-family:'Merriweather',serif;font-size:1.625rem;font-weight:900;color:var(--yellow);line-height:1}
-.about-badge .lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:4px}
+/* Product panels — full bleed alternating */
+.product-panel{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.product-panel.reverse .panel-img{order:2}
+.product-panel.reverse .panel-body{order:1}
+.panel-img{overflow:hidden;position:relative}
+.panel-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.product-panel:hover .panel-img img{transform:scale(1.04)}
+.panel-body{padding:72px 64px;display:flex;flex-direction:column;justify-content:center;background:var(--white)}
+.product-panel.reverse .panel-body{background:var(--cream)}
+.product-panel:nth-child(1) .panel-body{background:#fff}
+.product-panel:nth-child(2) .panel-body{background:var(--cream)}
+.product-panel:nth-child(3) .panel-body{background:var(--stone)}
+.panel-tag{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);border:1px solid var(--green);padding:4px 12px;border-radius:2px;margin-bottom:24px;opacity:.75}
+.panel-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:600;color:var(--dark);line-height:1.15;margin-bottom:6px}
+.panel-heading-en{font-family:'Inter',sans-serif;font-size:.875rem;font-weight:400;color:var(--muted);letter-spacing:.5px;margin-bottom:24px}
+.panel-desc{font-size:.9rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:32px}
+.panel-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:36px}
+.spec-cell{background:var(--white);padding:14px 16px}
+.product-panel.reverse .spec-cell,.product-panel:nth-child(2) .spec-cell{background:var(--cream)}
+.product-panel:nth-child(3) .spec-cell{background:var(--stone)}
+.spec-cell-lbl{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.spec-cell-val{font-size:.8125rem;font-weight:600;color:var(--dark)}
+.btn-enquire{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);border:1.5px solid var(--green);padding:12px 26px;border-radius:2px;transition:.2s}
+.btn-enquire:hover{background:var(--green);color:#fff}
+.btn-enquire-fill{background:var(--green);color:#fff}
+.btn-enquire-fill:hover{background:#145225;color:#fff}
 
-/* ─── DIVIDER BANNER ─── */
-.banner-divider{height:180px;position:relative;overflow:hidden}
-.banner-divider-bg{position:absolute;inset:0;background-image:url('/assets/photos/facility/grain-warehouse.jpg');background-size:cover;background-position:center 30%;filter:brightness(.45) saturate(1.1)}
-.banner-divider-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,25,12,.9) 0%,rgba(15,25,12,.55) 50%,rgba(15,25,12,.9) 100%);display:flex;align-items:center;justify-content:center}
-.banner-divider-text{text-align:center;color:#fff}
-.banner-divider-text h3{font-family:'Merriweather',serif;font-size:1.375rem;font-weight:700;color:#fff;margin-bottom:6px}
-.banner-divider-text p{font-size:.9375rem;color:rgba(255,255,255,.7)}
-.banner-divider-text em{color:var(--yellow);font-style:normal;font-weight:700}
-
-/* ─── PRODUCTS SECTION ─── */
-.products-section{padding:96px 0;background:var(--cream)}
-.products-intro{text-align:center;max-width:640px;margin:0 auto 72px}
-.products-intro .section-tag{justify-content:center}
-.products-intro .section-tag::before{display:none}
-.products-intro .section-lead{margin:0 auto}
-
-/* Product feature panels — alternating full-width */
-.product-features{display:flex;flex-direction:column;gap:4px}
-.product-feature{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
-.product-feature--alt .product-feature-img{order:2}
-.product-feature--alt .product-feature-content{order:1}
-.product-feature-img{overflow:hidden;position:relative}
-.product-feature-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.product-feature:hover .product-feature-img img{transform:scale(1.04)}
-.product-feature-content{background:var(--white);padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
-.product-feature--alt .product-feature-content{background:var(--dark);color:#fff}
-.product-feature--alt .product-feature-content .section-title{color:#fff}
-.product-feature--alt .product-feature-content .product-desc{color:rgba(255,255,255,.75)}
-.product-feature--alt .section-tag{color:var(--yellow)}
-.product-feature--alt .section-tag::before{background:var(--yellow)}
-.product-tag-badge{display:inline-block;background:var(--yellow-md);color:var(--amber);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;margin-bottom:18px;border:1px solid var(--border)}
-.product-feature--alt .product-tag-badge{background:rgba(240,194,0,.15);color:var(--yellow);border-color:rgba(240,194,0,.25)}
-.product-feature-content .section-title{margin-bottom:0}
-.product-desc{font-size:.9375rem;color:var(--muted);line-height:1.85;margin:20px 0 28px}
-.product-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
-.spec-pill{background:var(--cream);border:1px solid var(--border);padding:12px 14px}
-.product-feature--alt .spec-pill{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
-.spec-pill-label{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.product-feature--alt .spec-pill-label{color:rgba(255,255,255,.45)}
-.spec-pill-value{font-size:.875rem;font-weight:600;color:var(--dark)}
-.product-feature--alt .spec-pill-value{color:rgba(255,255,255,.9)}
-
-/* ─── WHY KSMT ─── */
-.why-ksmt{padding:88px 0;background:var(--white)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);margin-top:48px}
-.why-card{padding:36px 32px;border-right:1px solid var(--border);border-top:4px solid transparent;transition:border-color .2s,background .2s}
-.why-card:last-child{border-right:none}
-.why-card:hover{border-top-color:var(--yellow);background:var(--yellow-lt)}
-.why-icon{font-size:2rem;margin-bottom:16px;line-height:1}
-.why-title{font-family:'Merriweather',serif;font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:10px}
-.why-desc{font-size:.875rem;color:var(--muted);line-height:1.75}
+/* ─── STORY / ABOUT ─── */
+.story{padding:96px 0;background:var(--white)}
+.story-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.story-img{position:relative}
+.story-img-frame{aspect-ratio:3/4;overflow:hidden;border-radius:2px}
+.story-img-frame img{width:100%;height:100%;object-fit:cover}
+.story-img-badge{position:absolute;bottom:-24px;right:-24px;background:var(--green);color:#fff;padding:24px 28px;text-align:center}
+.story-img-badge .yr{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:700;line-height:1;color:var(--yellow)}
+.story-img-badge .yl{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:6px}
+.story-text p{font-size:.9375rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:18px}
+.story-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:36px 0}
+.story-stat{background:var(--cream);padding:20px 16px;text-align:center}
+.story-stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--green);line-height:1}
+.story-stat-lbl{font-size:9.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
 /* ─── PROCESS ─── */
-.process{padding:88px 0;background:var(--cream)}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border:1px solid var(--border)}
-.process-step{background:var(--white);overflow:hidden;border-right:1px solid var(--border)}
-.process-step:last-child{border-right:none}
-.process-step-img{aspect-ratio:4/3;overflow:hidden;position:relative}
-.process-step-img img{width:100%;height:100%;object-fit:cover}
-.process-step-body{padding:24px 22px}
-.process-step-num{font-family:'Merriweather',serif;font-size:2rem;font-weight:900;color:var(--yellow);line-height:1;margin-bottom:10px}
-.process-step-title{font-family:'Merriweather',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:8px}
-.process-step-desc{font-size:.8125rem;color:var(--muted);line-height:1.7}
+.process{padding:96px 0;background:var(--cream)}
+.process-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.process-intro{max-width:520px;margin-bottom:64px}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.process-card{background:var(--white);overflow:hidden;border-radius:2px;border:1px solid var(--border);transition:box-shadow .25s}
+.process-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.07)}
+.pc-img{aspect-ratio:4/3;overflow:hidden}
+.pc-img img{width:100%;height:100%;object-fit:cover}
+.pc-body{padding:22px 20px}
+.pc-step{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.pc-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--dark);margin-bottom:8px}
+.pc-desc{font-size:.8125rem;color:var(--muted);line-height:1.75;font-weight:300}
 
-/* ─── RFQ / CONTACT ─── */
-.rfq{padding:88px 0;background:var(--white);border-top:4px solid var(--green)}
-.rfq-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.rfq-info h2{font-family:'Merriweather',serif;font-size:1.875rem;font-weight:900;color:var(--dark);margin-bottom:16px}
-.rfq-info p{color:var(--muted);font-size:.9375rem;line-height:1.8;margin-bottom:28px}
-.contact-detail{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-.contact-row{display:flex;align-items:flex-start;gap:12px;font-size:.875rem}
-.contact-row-icon{width:20px;flex-shrink:0;color:var(--amber);font-size:1rem;margin-top:1px}
-.contact-row-label{font-weight:700;color:var(--dark);margin-right:6px}
-.hours-table{width:100%;font-size:.8125rem;border-collapse:collapse;margin-top:8px}
-.hours-table td{padding:4px 0;color:var(--muted)}
-.hours-table td:first-child{font-weight:600;color:var(--dark);width:140px}
-.rfq-form-box{background:var(--cream);border:1px solid var(--border);padding:40px}
-.form-group{margin-bottom:18px}
-.form-group label{display:block;font-size:.8125rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text);margin-bottom:6px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1px solid var(--border);background:var(--white);font-family:'Open Sans',sans-serif;font-size:.875rem;color:var(--text);outline:none;transition:border-color .2s;-webkit-appearance:none;border-radius:0}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green)}
-.form-group textarea{resize:vertical;min-height:100px}
-.btn-submit{width:100%;padding:14px;background:var(--green);color:#fff;font-family:'Open Sans',sans-serif;font-size:.9375rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;transition:.2s;margin-top:4px}
-.btn-submit:hover{background:var(--green-hover)}
-.map-embed{border:1px solid var(--border);overflow:hidden;margin-top:24px}
-.map-embed iframe{width:100%;height:220px;display:block;border:none;filter:saturate(.85)}
+/* ─── FULL-BLEED DIVIDER ─── */
+.full-divider{height:280px;overflow:hidden;position:relative}
+.full-divider-bg{position:absolute;inset:0}
+.full-divider-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.5) saturate(1.1)}
+.full-divider-overlay{position:absolute;inset:0;background:rgba(10,20,10,.45);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.full-divider-text{color:#fff;text-align:center}
+.full-divider-text h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;margin-bottom:8px}
+.full-divider-text p{font-size:.9rem;color:rgba(255,255,255,.7);font-weight:300}
+
+/* ─── CONTACT / RFQ ─── */
+.contact{padding:96px 0;background:var(--white)}
+.contact-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.875rem,3vw,2.75rem);font-weight:600;color:var(--dark);margin-bottom:16px;line-height:1.2}
+.contact-left p{font-size:.9375rem;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:32px}
+.contact-items{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.ci{display:flex;align-items:flex-start;gap:14px}
+.ci-icon{width:36px;height:36px;background:var(--green-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.875rem}
+.ci-content{font-size:.875rem;color:var(--muted);line-height:1.6;font-weight:300}
+.ci-label{font-weight:600;color:var(--dark);font-size:.8125rem;letter-spacing:.3px;margin-bottom:2px}
+.ci a{color:var(--green)}
+.hours-box{background:var(--cream);border:1px solid var(--border);padding:20px 22px;border-radius:2px;font-size:.8125rem}
+.hours-box table{width:100%;border-collapse:collapse}
+.hours-box td{padding:5px 0;color:var(--muted);font-weight:300}
+.hours-box td:first-child{font-weight:600;color:var(--dark);width:130px}
+.map-wrap{border:1px solid var(--border);overflow:hidden;border-radius:2px;margin-top:20px}
+.map-wrap iframe{width:100%;height:200px;display:block;border:none;filter:saturate(.8)}
+/* Form */
+.contact-form{background:var(--cream);border:1px solid var(--border);padding:44px;border-radius:2px}
+.contact-form h3{font-family:'Cormorant Garamond',serif;font-size:1.625rem;font-weight:600;color:var(--dark);margin-bottom:28px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--white);font-family:'Inter',sans-serif;font-size:.875rem;color:var(--text);outline:none;transition:border-color .2s;border-radius:2px;font-weight:300}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--green)}
+.fg textarea{resize:vertical;min-height:100px}
+.fg select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237A7670'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.btn-form{width:100%;padding:14px;background:var(--green);color:#fff;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:background .2s}
+.btn-form:hover{background:#145225}
 
 /* ─── FOOTER ─── */
-.footer{background:var(--dark);color:rgba(255,255,255,.55);padding:48px 0 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
-.footer-brand .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-brand img{height:38px;width:auto;object-fit:contain;filter:brightness(0) invert(1)}
-.footer-brand-name{font-family:'Merriweather',serif;font-size:.875rem;font-weight:900;color:#fff;letter-spacing:.5px}
-.footer-brand-sub{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:2px}
-.footer-brand p{font-size:.8125rem;line-height:1.7;max-width:300px}
-.footer-col h4{font-size:.8125rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:16px}
-.footer-col li{margin-bottom:8px}
-.footer-col a{font-size:.8125rem;color:rgba(255,255,255,.5);transition:color .2s}
-.footer-col a:hover{color:var(--yellow)}
-.footer-bottom{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.75rem}
-.footer-bottom a{color:rgba(255,255,255,.4);transition:color .2s}
+.footer{background:#111;color:rgba(255,255,255,.45);padding:56px 0 28px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand img{height:34px;filter:brightness(0) invert(1);opacity:.7;margin-bottom:16px}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:4px}
+.footer-brand-sub{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer-brand p{font-size:.8125rem;line-height:1.75;max-width:300px;font-weight:300}
+.footer-col h4{font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:18px}
+.footer-col ul{display:flex;flex-direction:column;gap:9px}
+.footer-col a{font-size:.8125rem;color:rgba(255,255,255,.4);font-weight:300;transition:color .2s}
+.footer-col a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.75rem;font-weight:300}
+.footer-bottom a{color:rgba(255,255,255,.35)}
 .footer-bottom a:hover{color:var(--yellow)}
-.footer-group-link{color:rgba(255,255,255,.35);font-size:.75rem}
-.footer-group-link a{color:var(--yellow);opacity:.7}
 
 /* ─── RESPONSIVE ─── */
-@media(max-width:960px){
-  .about-grid,.rfq-grid{grid-template-columns:1fr;gap:40px}
-  .about-badge{left:auto;right:16px;bottom:-12px}
-  .product-feature{grid-template-columns:1fr;min-height:auto}
-  .product-feature--alt .product-feature-img{order:0}
-  .product-feature--alt .product-feature-content{order:0}
-  .product-feature-img{aspect-ratio:16/9}
-  .product-feature-content{padding:40px 32px}
-  .why-grid{grid-template-columns:1fr}
-  .why-card{border-right:none;border-bottom:1px solid var(--border)}
-  .process-steps{grid-template-columns:1fr 1fr}
-  .process-step{border-right:1px solid var(--border)}
-  .process-step:nth-child(2n){border-right:none}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-  .harvest-strip-inner{grid-template-columns:repeat(3,1fr)}
-  .harvest-cell:nth-child(4),.harvest-cell:nth-child(5){border-top:1px solid rgba(0,0,0,.1)}
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-img-col{height:400px}
+  .hero-text-col{padding:72px 40px;max-width:100%}
+  .product-panel{grid-template-columns:1fr;min-height:auto}
+  .product-panel.reverse .panel-img{order:0}
+  .product-panel.reverse .panel-body{order:0}
+  .panel-img{height:400px}
+  .panel-body{padding:52px 40px}
+  .story-inner,.contact-inner{grid-template-columns:1fr;gap:48px}
+  .story-img{display:none}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .process-grid{grid-template-columns:1fr 1fr;gap:16px}
 }
 @media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
+  .nb-links,.nb-cta{display:none}
   .hamburger{display:flex}
   .topbar-left{display:none}
   .topbar-inner{justify-content:flex-end}
-  .product-specs-grid{grid-template-columns:1fr}
+  .hero-text-col{padding:56px 24px}
+  .panel-body{padding:40px 24px}
+  .panel-specs{grid-template-columns:1fr 1fr}
+  .product-nav{display:none}
+  .story-stats{grid-template-columns:1fr}
+  .contact-form{padding:28px 20px}
+  .process-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
-  .harvest-strip-inner{grid-template-columns:repeat(2,1fr)}
-  .harvest-cell:nth-child(5){display:none}
-  .process-steps{grid-template-columns:1fr}
-  .process-step{border-right:none;border-bottom:1px solid var(--border)}
-  .hero{min-height:480px}
-  .hero-content{padding:72px 0}
-  .topbar-lang .lang-code{display:none}
+  .hero-headline{font-size:2.25rem}
+  .panel-specs{grid-template-columns:1fr}
+  .hero-img-col{height:280px}
+  .panel-img{height:300px}
+  .t-lang .lc{display:none}
 }
 </style>
 </head>
 <body>
 
-<!-- GOOGLE TRANSLATE (hidden) -->
+<!-- GOOGLE TRANSLATE (hidden engine) -->
 <div id="google_translate_element"></div>
 
-<!-- ═══ TOP UTILITY BAR ═══ -->
+<!-- ═══ TOPBAR ═══ -->
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-left">
-      <a href="tel:+6233488788">📞 +62 334 887888</a>
+      <a href="tel:+6233488788">+62 334 887888</a>
       <span class="topbar-sep">|</span>
       <a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a>
       <span class="topbar-sep">|</span>
-      <span>Mon–Fri 07:00–16:00 · Sat 07:00–15:00 WIB</span>
+      <span>Mon–Fri 07:00–16:00 · Sat 07:00–15:00</span>
     </div>
     <div class="topbar-langs">
-      <button class="topbar-lang active" onclick="setLang('','EN')">🇬🇧 <span class="lang-code">EN</span></button>
-      <button class="topbar-lang" onclick="setLang('ja','JA')">🇯🇵 <span class="lang-code">JA</span></button>
-      <button class="topbar-lang" onclick="setLang('zh-CN','ZH')">🇨🇳 <span class="lang-code">ZH</span></button>
-      <button class="topbar-lang" onclick="setLang('ko','KO')">🇰🇷 <span class="lang-code">KO</span></button>
-      <button class="topbar-lang" onclick="setLang('es','ES')">🇪🇸 <span class="lang-code">ES</span></button>
+      <button class="t-lang active" onclick="setLang('','EN')">🇬🇧 <span class="lc">EN</span></button>
+      <button class="t-lang" onclick="setLang('ja','JA')">🇯🇵 <span class="lc">JA</span></button>
+      <button class="t-lang" onclick="setLang('zh-CN','ZH')">🇨🇳 <span class="lc">ZH</span></button>
+      <button class="t-lang" onclick="setLang('ko','KO')">🇰🇷 <span class="lc">KO</span></button>
+      <button class="t-lang" onclick="setLang('es','ES')">🇪🇸 <span class="lc">ES</span></button>
     </div>
   </div>
 </div>
 
 <!-- ═══ NAVBAR ═══ -->
-<nav class="navbar" role="navigation">
-  <div class="container">
-    <a href="#" class="nav-logo">
-      <img src="/assets/brand/Logo%20Mustikatama%20v2.png" alt="Mustikatama Group logo">
-      <div class="nav-logo-text">
-        <span class="nav-logo-name">KSMT</span>
-        <span class="nav-logo-sub">PT Karya Setya Mustikatama</span>
+<nav class="navbar">
+  <div class="nb">
+    <a href="#" class="nb-logo">
+      <img src="/assets/brand/Logo%20Mustikatama%20v2.png" alt="Mustikatama Group">
+      <div class="nb-logo-text">
+        <div class="nb-logo-name">KSMT</div>
+        <div class="nb-logo-sub">PT Karya Setya Mustikatama</div>
       </div>
     </a>
-    <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#rfq">Contact</a></li>
-    </ul>
-    <a href="#rfq" class="nav-cta">Request Quote</a>
-    <button class="hamburger" id="menuBtn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nb-links">
+      <a href="#products">Products</a>
+      <a href="#story">About</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nb-cta">Request Quote</a>
+    </div>
+    <button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav-mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu">
     <a href="#products">Products</a>
-    <a href="#about">About</a>
+    <a href="#story">About</a>
     <a href="#process">Process</a>
-    <a href="#rfq">Request Quote</a>
+    <a href="#contact">Request Quote</a>
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══ HERO — light split ═══ -->
 <section class="hero">
-  <!-- DUMMY: Replace with aerial paddy field or rice mill facility — warm, golden harvest light, landscape orientation -->
-  <div class="hero-bg-dummy">
-    <div class="photo-dummy photo-dummy--paddy" style="width:100%;height:100%;position:absolute;inset:0;">
-      <div class="photo-dummy-icon">🌾</div>
-      <div class="photo-dummy-label">Hero Background</div>
-      <div class="photo-dummy-hint">Aerial paddy field or rice mill facility — golden harvest light, landscape</div>
+  <div class="hero-text-col">
+    <div class="hero-eyebrow">Agricultural Commodity Processing</div>
+    <h1 class="hero-headline">Harvested in <em>East Java.</em><br>Processed for Your Table.</h1>
+    <p class="hero-body">PT Karya Setya Mustikatama mills and supplies premium white rice, paddy grain and red shallot — sourced direct from East Java farms and processed to consistent B2B standards.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="#products" class="btn-secondary">Explore Products →</a>
     </div>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content container">
-    <div class="hero-eyebrow">Rice &amp; Agri Processing · Lumajang, East Java</div>
-    <h1>From <em>East Java's Finest Paddies</em> to Your Supply Chain</h1>
-    <p class="hero-desc">PT Karya Setya Mustikatama mills and processes paddy, white rice and red shallot for distributors, food manufacturers and institutional buyers across Indonesia. Consistent quality. Reliable supply.</p>
-    <div class="hero-btns">
-      <a href="#rfq" class="btn-green">Request a Quote</a>
-      <a href="#products" class="btn-outline-white">Explore Products</a>
-    </div>
-    <div class="hero-badges">
-      <span class="hero-badge">🌾 Paddy · Rice · Onion</span>
-      <span class="hero-badge">📍 Lumajang, East Java</span>
-      <span class="hero-badge">🏭 B2B Supplier</span>
+  <div class="hero-img-col">
+    <!-- DUMMY ▸ HERO RIGHT PANEL
+         Replace with: large portrait/square format photo of white rice in a clean setting —
+         OR aerial paddy field at golden hour — full bleed, no text overlay needed.
+         Orientation: portrait or square. High resolution. -->
+    <div class="photo-dummy dummy-rice" style="width:100%;height:100%;min-height:500px">
+      <div class="pd-icon">🌾</div>
+      <div class="pd-label">Hero Image</div>
+      <div class="pd-hint">White rice close-up (bowl / grain texture) OR aerial paddy field at golden hour — portrait format</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ HARVEST STATS STRIP ═══ -->
-<div class="harvest-strip">
-  <div class="harvest-strip-inner">
-    <div class="harvest-cell">
-      <div class="harvest-num">1989</div>
-      <div class="harvest-lbl">Established</div>
-    </div>
-    <div class="harvest-cell">
-      <div class="harvest-num">3</div>
-      <div class="harvest-lbl">Commodities</div>
-    </div>
-    <div class="harvest-cell">
-      <div class="harvest-num">East Java</div>
-      <div class="harvest-lbl">Production Base</div>
-    </div>
-    <div class="harvest-cell">
-      <div class="harvest-num">Local</div>
-      <div class="harvest-lbl">Farmer Sourcing</div>
-    </div>
-    <div class="harvest-cell">
-      <div class="harvest-num">B2B</div>
-      <div class="harvest-lbl">Distributor Supply</div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ ABOUT ═══ -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-tag">About KSMT</div>
-        <h2 class="section-title">East Java's Agricultural Processing Partner</h2>
-        <div class="divider-amber"></div>
-        <p>PT Karya Setya Mustikatama (KSMT) is an agricultural commodity processing company based in Lumajang, East Java — one of Indonesia's most productive rice and horticultural regions.</p>
-        <p>We source paddy directly from local East Java farmers, mill and process it at our facility, and supply white rice, paddy grain and red shallot to distributors, food manufacturers, wholesalers and institutional buyers across Indonesia.</p>
-        <p>Our facility sits at Jl. Raya Lumajang–Tempeh KM 7, at the heart of East Java's agricultural corridor — giving us direct, cost-effective access to raw material and the ability to maintain consistent supply year-round.</p>
-        <a href="#rfq" class="btn-green" style="margin-top:8px">Discuss Your Requirements</a>
-      </div>
-      <div class="about-photo-wrap">
-        <div class="photo-frame" style="aspect-ratio:4/3;overflow:hidden">
-          <!-- DUMMY: Replace with rice mill facility interior or grain warehouse — showing scale of operation -->
-          <div class="photo-dummy photo-dummy--green" style="width:100%;height:100%;">
-            <div class="photo-dummy-icon">🏭</div>
-            <div class="photo-dummy-label">About Photo</div>
-            <div class="photo-dummy-hint">Rice mill interior or grain warehouse — showing scale and equipment</div>
-          </div>
-        </div>
-        <div class="about-badge">
-          <div class="num">37<span style="font-size:1rem">yr</span></div>
-          <div class="lbl">Est. 1989</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ DIVIDER BANNER ═══ -->
-<div class="banner-divider">
-  <div class="banner-divider-bg"></div>
-  <div class="banner-divider-overlay">
-    <div class="banner-divider-text">
-      <h3>Straight from East Java's Agricultural Heartland</h3>
-      <p>Paddy · White Rice · <em>Red Shallot</em> — processed for your supply chain</p>
-    </div>
+<!-- ═══ PRODUCT QUICK-NAV ═══ -->
+<div class="product-nav">
+  <div class="product-nav-inner">
+    <a class="pnav-item" href="#rice">White Rice</a>
+    <div class="pnav-divider"></div>
+    <a class="pnav-item" href="#gabah">Paddy Grain</a>
+    <div class="pnav-divider"></div>
+    <a class="pnav-item" href="#onion">Red Shallot</a>
+    <div class="pnav-divider"></div>
+    <a class="pnav-item" href="#contact" style="color:var(--green);font-weight:600">→ Request Quote</a>
   </div>
 </div>
 
 <!-- ═══ PRODUCTS ═══ -->
-<section class="products-section" id="products">
-  <div class="container">
-    <div class="products-intro">
-      <div class="section-tag">Our Products</div>
-      <h2 class="section-title">Three Commodities. One Reliable Source.</h2>
-      <p class="section-lead">We specialise in three key agricultural commodities — all sourced from East Java's best growing regions and processed to B2B market standards.</p>
+<div id="products">
+  <div class="products-intro">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px">
+      <div class="section-eyebrow" style="text-align:center">Our Products</div>
+      <h2 class="section-heading" style="text-align:center">Three Commodities.<br>One Trusted Source.</h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto;max-width:520px">Sourced from East Java's most productive agricultural regions and processed to the consistent quality standards your supply chain demands.</p>
     </div>
   </div>
 
-  <div class="product-features">
-
-    <!-- ── PRODUCT 1: WHITE RICE ── -->
-    <div class="product-feature" id="rice">
-      <div class="product-feature-img">
-        <!-- DUMMY: Replace with close-up of white rice grains — clean bowl or pile of premium white rice against neutral background; high resolution; food-styling quality -->
-        <div class="photo-dummy photo-dummy--light" style="width:100%;height:100%;min-height:400px">
-          <div class="photo-dummy-icon">🍚</div>
-          <div class="photo-dummy-label">White Rice (Beras)</div>
-          <div class="photo-dummy-hint">Close-up: clean white rice grains — bowl or pile. High-res, food-styling quality. Neutral/warm background.</div>
-        </div>
-      </div>
-      <div class="product-feature-content">
-        <span class="product-tag-badge">Core Product</span>
-        <div class="section-tag">White Rice</div>
-        <h2 class="section-title">Beras Putih</h2>
-        <div class="divider-amber"></div>
-        <p class="product-desc">Milled from quality East Java paddy, our white rice is consistent in grain size, moisture content and cleanliness — meeting the standards of wholesalers, distributors and food manufacturers. Available in multiple varieties and grades.</p>
-        <div class="product-specs-grid">
-          <div class="spec-pill">
-            <div class="spec-pill-label">Varieties</div>
-            <div class="spec-pill-value">IR64 · Ciherang · Pandan Wangi</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Packaging</div>
-            <div class="spec-pill-value">5kg · 10kg · 25kg · 50kg</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Grade</div>
-            <div class="spec-pill-value">Premium · Medium</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Min. Order</div>
-            <div class="spec-pill-value">1 Ton</div>
-          </div>
-        </div>
-        <a href="#rfq" class="btn-green">Request Quote</a>
+  <!-- ── PRODUCT 1: WHITE RICE ── -->
+  <div class="product-panel" id="rice">
+    <div class="panel-img">
+      <!-- DUMMY ▸ WHITE RICE PANEL
+           Replace with: food-photography quality close-up of clean white rice —
+           steamed rice in a bowl, OR loose grains on a surface, OR overhead shot of
+           white rice with natural shadows. Clean, editorial feel. Warm neutral background.
+           Landscape or square, high resolution. -->
+      <div class="photo-dummy dummy-rice" style="width:100%;height:100%;min-height:480px">
+        <div class="pd-icon">🍚</div>
+        <div class="pd-label">White Rice — Beras Putih</div>
+        <div class="pd-hint">Food-photography close-up — clean white rice grains or steamed bowl. Warm neutral bg. Editorial quality.</div>
       </div>
     </div>
-
-    <!-- ── PRODUCT 2: PADDY / GABAH ── -->
-    <div class="product-feature product-feature--alt" id="gabah">
-      <div class="product-feature-img">
-        <!-- DUMMY: Replace with heap or sacks of paddy grain (gabah) — golden/tan coloured, showing raw paddy texture; could also show paddy field harvest -->
-        <div class="photo-dummy photo-dummy--paddy" style="width:100%;height:100%;min-height:400px">
-          <div class="photo-dummy-icon">🌾</div>
-          <div class="photo-dummy-label">Paddy / Gabah</div>
-          <div class="photo-dummy-hint">Heap or sacks of raw paddy grain — golden colour, showing texture. Or paddy field harvest scene.</div>
+    <div class="panel-body">
+      <span class="panel-tag">Core Product</span>
+      <h2 class="panel-heading">Beras Putih</h2>
+      <p class="panel-heading-en">White Rice</p>
+      <p class="panel-desc">Milled from quality East Java paddy, our white rice delivers consistent grain size, low broken percentage and controlled moisture content — precisely what wholesalers, distributors and food manufacturers need for reliable supply chain performance.</p>
+      <div class="panel-specs">
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Varieties</div>
+          <div class="spec-cell-val">IR64 · Ciherang · Pandan Wangi</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Packaging</div>
+          <div class="spec-cell-val">5 kg · 10 kg · 25 kg · 50 kg</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Grade</div>
+          <div class="spec-cell-val">Premium · Medium</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Min. Order</div>
+          <div class="spec-cell-val">1 Ton</div>
         </div>
       </div>
-      <div class="product-feature-content">
-        <span class="product-tag-badge">Primary Commodity</span>
-        <div class="section-tag">Paddy Grain</div>
-        <h2 class="section-title">Gabah</h2>
-        <div class="divider-yellow"></div>
-        <p class="product-desc">We source, clean and dry raw paddy (gabah) direct from local East Java farms. Supplied to rice mills, processors and traders who need a reliable, consistent supply of quality paddy grain with controlled moisture content.</p>
-        <div class="product-specs-grid">
-          <div class="spec-pill">
-            <div class="spec-pill-label">Source</div>
-            <div class="spec-pill-value">East Java Local Farms</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Moisture</div>
-            <div class="spec-pill-value">≤14%</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Packaging</div>
-            <div class="spec-pill-value">50kg Sack · Bulk</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Min. Order</div>
-            <div class="spec-pill-value">5 Ton</div>
-          </div>
-        </div>
-        <a href="#rfq" class="btn-green" style="background:var(--yellow);border-color:var(--yellow);color:var(--dark)">Request Quote</a>
+      <a href="#contact" class="btn-enquire btn-enquire-fill">Enquire Now →</a>
+    </div>
+  </div>
+
+  <!-- ── PRODUCT 2: PADDY / GABAH ── -->
+  <div class="product-panel reverse" id="gabah">
+    <div class="panel-img">
+      <!-- DUMMY ▸ PADDY / GABAH PANEL
+           Replace with: heap of raw paddy grain (gabah) — golden/tan husked grain
+           showing texture. Could also be paddy field at harvest, or sacks of gabah
+           being loaded. Warm golden tones. Landscape format preferred. -->
+      <div class="photo-dummy dummy-gabah" style="width:100%;height:100%;min-height:480px">
+        <div class="pd-icon">🌾</div>
+        <div class="pd-label">Paddy Grain — Gabah</div>
+        <div class="pd-hint">Heap of raw paddy grain showing golden texture. OR paddy field at harvest. Warm golden tones.</div>
       </div>
     </div>
-
-    <!-- ── PRODUCT 3: RED SHALLOT ── -->
-    <div class="product-feature" id="onion">
-      <div class="product-feature-img">
-        <!-- DUMMY: Replace with pile or crate of red shallots (bawang merah) — deep red/purple colour, showing freshness; Lumajang-grown ideally. Close-up or overhead shot. -->
-        <div class="photo-dummy photo-dummy--onion" style="width:100%;height:100%;min-height:400px">
-          <div class="photo-dummy-icon">🧅</div>
-          <div class="photo-dummy-label">Red Shallot (Bawang Merah)</div>
-          <div class="photo-dummy-hint">Pile or crate of fresh red shallots — deep red/purple. Close-up or overhead. Lumajang variety preferred.</div>
+    <div class="panel-body">
+      <span class="panel-tag">Primary Commodity</span>
+      <h2 class="panel-heading">Gabah</h2>
+      <p class="panel-heading-en">Paddy Grain</p>
+      <p class="panel-desc">We source, clean and dry raw paddy (gabah) direct from East Java farming communities. Supplied with controlled moisture content to rice mills, processors and traders who need a consistent, traceable source of quality paddy grain.</p>
+      <div class="panel-specs">
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Source</div>
+          <div class="spec-cell-val">East Java Local Farms</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Moisture</div>
+          <div class="spec-cell-val">≤ 14%</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Packaging</div>
+          <div class="spec-cell-val">50 kg Sack · Bulk</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Min. Order</div>
+          <div class="spec-cell-val">5 Ton</div>
         </div>
       </div>
-      <div class="product-feature-content">
-        <span class="product-tag-badge">Speciality Crop</span>
-        <div class="section-tag">Red Shallot</div>
-        <h2 class="section-title">Bawang Merah</h2>
-        <div class="divider-amber"></div>
-        <p class="product-desc">Lumajang is one of Indonesia's premier shallot-growing regions. We source, grade and supply bawang merah to traders, food manufacturers and institutional buyers. Consistent sizing and cleanliness for market-ready delivery.</p>
-        <div class="product-specs-grid">
-          <div class="spec-pill">
-            <div class="spec-pill-label">Origin</div>
-            <div class="spec-pill-value">Lumajang, East Java</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Packaging</div>
-            <div class="spec-pill-value">5kg · 10kg Net · 20kg Crate</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Grade</div>
-            <div class="spec-pill-value">Grade A · Grade B</div>
-          </div>
-          <div class="spec-pill">
-            <div class="spec-pill-label">Min. Order</div>
-            <div class="spec-pill-value">500 kg</div>
-          </div>
-        </div>
-        <a href="#rfq" class="btn-green">Request Quote</a>
+      <a href="#contact" class="btn-enquire">Enquire Now →</a>
+    </div>
+  </div>
+
+  <!-- ── PRODUCT 3: RED SHALLOT ── -->
+  <div class="product-panel" id="onion">
+    <div class="panel-img">
+      <!-- DUMMY ▸ RED SHALLOT PANEL
+           Replace with: close-up of fresh red shallots (bawang merah) — deep red/purple
+           colour, ideally Lumajang variety. Pile on surface, or crate/basket shot.
+           Overhead or 45° angle works well. Rich, saturated reds. -->
+      <div class="photo-dummy dummy-onion" style="width:100%;height:100%;min-height:480px">
+        <div class="pd-icon">🧅</div>
+        <div class="pd-label">Red Shallot — Bawang Merah</div>
+        <div class="pd-hint">Close-up of fresh red shallots — deep red/purple. Pile or crate. Overhead or 45° angle. Lumajang variety preferred.</div>
       </div>
     </div>
+    <div class="panel-body">
+      <span class="panel-tag">Speciality Crop</span>
+      <h2 class="panel-heading">Bawang Merah</h2>
+      <p class="panel-heading-en">Red Shallot</p>
+      <p class="panel-desc">Lumajang is one of Indonesia's foremost shallot-growing regions. We source, grade and supply bawang merah to food traders, manufacturers and institutional buyers requiring consistent size, cleanliness and freshness for market-ready delivery.</p>
+      <div class="panel-specs">
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Origin</div>
+          <div class="spec-cell-val">Lumajang, East Java</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Packaging</div>
+          <div class="spec-cell-val">5 kg · 10 kg Net · 20 kg Crate</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Grade</div>
+          <div class="spec-cell-val">Grade A · Grade B</div>
+        </div>
+        <div class="spec-cell">
+          <div class="spec-cell-lbl">Min. Order</div>
+          <div class="spec-cell-val">500 kg</div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-enquire btn-enquire-fill">Enquire Now →</a>
+    </div>
+  </div>
+</div>
 
-  </div><!-- /product-features -->
-</section>
+<!-- ═══ FULL-BLEED DIVIDER ═══ -->
+<div class="full-divider">
+  <div class="full-divider-bg">
+    <img src="/assets/photos/facility/grain-warehouse.jpg" alt="KSMT grain warehouse">
+  </div>
+  <div class="full-divider-overlay">
+    <div class="full-divider-text">
+      <h3>Straight from East Java's Agricultural Heartland</h3>
+      <p>Paddy · White Rice · Red Shallot — processed for your supply chain</p>
+    </div>
+  </div>
+</div>
 
-<!-- ═══ WHY KSMT ═══ -->
-<section class="why-ksmt" id="why">
-  <div class="container">
-    <div class="section-tag">Why KSMT</div>
-    <h2 class="section-title">Local Source. Consistent Quality.</h2>
-    <div class="divider-amber"></div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🌾</div>
-        <div class="why-title">Direct Farmer Network</div>
-        <p class="why-desc">We source directly from East Java farming communities — cutting intermediaries, ensuring traceability, and maintaining consistent quality through controlled farm-to-mill practices.</p>
+<!-- ═══ STORY / ABOUT ═══ -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-img">
+      <!-- DUMMY ▸ ABOUT SECTION
+           Replace with: rice mill facility interior OR aerial view of KSMT compound —
+           portrait orientation (3:4 ratio). Shows scale of operation. -->
+      <div class="story-img-frame">
+        <div class="photo-dummy dummy-mill" style="width:100%;height:100%;min-height:480px">
+          <div class="pd-icon">🏭</div>
+          <div class="pd-label">About / Facility</div>
+          <div class="pd-hint">Rice mill interior or aerial facility view. Portrait 3:4 ratio. Shows scale.</div>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon">⚙️</div>
-        <div class="why-title">Modern Milling Facility</div>
-        <p class="why-desc">Our rice milling plant at Lumajang uses modern hulling, whitening and polishing equipment — delivering consistent grain size, moisture content and cleanliness across every batch.</p>
+      <div class="story-img-badge">
+        <div class="yr">1989</div>
+        <div class="yl">Established</div>
       </div>
-      <div class="why-card">
-        <div class="why-icon">📦</div>
-        <div class="why-title">Flexible B2B Supply</div>
-        <p class="why-desc">From 500kg to multi-ton orders, we accommodate distributors, food manufacturers and institutional buyers with flexible packaging, grades and delivery terms to match your supply chain.</p>
+    </div>
+    <div class="story-text">
+      <div class="section-eyebrow">Our Story</div>
+      <h2 class="section-heading">Rooted in East Java's<br>Agricultural Tradition</h2>
+      <p>PT Karya Setya Mustikatama (KSMT) is an agricultural commodity processing company based in Lumajang, East Java — one of Indonesia's most productive rice and horticultural regions.</p>
+      <p>For over three decades, we have worked alongside local farming communities to source, mill and process paddy, white rice and red shallot — supplying distributors, food manufacturers, wholesalers and institutional buyers across Indonesia.</p>
+      <p>Our facility at Jl. Raya Lumajang–Tempeh KM 7 sits at the heart of East Java's agricultural corridor, giving us direct access to the finest local produce and the capacity to maintain consistent year-round supply.</p>
+      <div class="story-stats">
+        <div class="story-stat">
+          <div class="story-stat-num">37+</div>
+          <div class="story-stat-lbl">Years Operating</div>
+        </div>
+        <div class="story-stat">
+          <div class="story-stat-num">3</div>
+          <div class="story-stat-lbl">Commodities</div>
+        </div>
+        <div class="story-stat">
+          <div class="story-stat-num">B2B</div>
+          <div class="story-stat-lbl">Focused Supply</div>
+        </div>
       </div>
+      <a href="#contact" class="btn-primary">Get in Touch</a>
     </div>
   </div>
 </section>
 
 <!-- ═══ PROCESS ═══ -->
 <section class="process" id="process">
-  <div class="container">
-    <div class="section-tag">How We Work</div>
-    <h2 class="section-title">From Field to Delivery</h2>
-    <div class="divider-amber"></div>
-    <p class="section-lead">Five controlled steps — from raw harvest to finished, market-ready product.</p>
-    <div class="process-steps">
+  <div class="process-inner">
+    <div class="process-intro">
+      <div class="section-eyebrow">How We Work</div>
+      <h2 class="section-heading">From Field to Delivery</h2>
+      <p class="section-sub">Four controlled steps — from raw harvest to finished, market-ready product.</p>
+    </div>
+    <div class="process-grid">
 
-      <div class="process-step">
-        <div class="process-step-img">
-          <!-- DUMMY: Paddy field or farmer harvesting — showing raw material sourcing -->
-          <div class="photo-dummy photo-dummy--paddy" style="width:100%;height:100%">
-            <div class="photo-dummy-icon">👨‍🌾</div>
-            <div class="photo-dummy-label">Step 1</div>
-            <div class="photo-dummy-hint">Farmer sourcing / paddy field harvest</div>
+      <div class="process-card">
+        <div class="pc-img">
+          <!-- DUMMY ▸ Step 1: farmer / paddy sourcing -->
+          <div class="photo-dummy dummy-farm" style="width:100%;height:100%;min-height:200px">
+            <div class="pd-icon">👨‍🌾</div>
+            <div class="pd-label">Step 1</div>
+            <div class="pd-hint">Farmer sourcing or paddy field</div>
           </div>
         </div>
-        <div class="process-step-body">
-          <div class="process-step-num">01</div>
-          <div class="process-step-title">Paddy Sourcing</div>
-          <p class="process-step-desc">Raw paddy, grain and onion received direct from local East Java farmers. Graded for quality and moisture at intake.</p>
+        <div class="pc-body">
+          <div class="pc-step">Step 01</div>
+          <div class="pc-title">Paddy Sourcing</div>
+          <p class="pc-desc">Raw paddy and produce received direct from local East Java farmers. Graded on arrival for quality and moisture.</p>
         </div>
       </div>
 
-      <div class="process-step">
-        <div class="process-step-img">
-          <!-- DUMMY: Drying yard or drying equipment — sun-drying or mechanical dryer -->
-          <div class="photo-dummy photo-dummy--aerial" style="width:100%;height:100%">
-            <div class="photo-dummy-icon">☀️</div>
-            <div class="photo-dummy-label">Step 2</div>
-            <div class="photo-dummy-hint">Paddy drying — sun drying yard or mechanical dryer</div>
+      <div class="process-card">
+        <div class="pc-img">
+          <!-- DUMMY ▸ Step 2: drying yard or dryer equipment -->
+          <div class="photo-dummy dummy-dry" style="width:100%;height:100%;min-height:200px">
+            <div class="pd-icon">☀️</div>
+            <div class="pd-label">Step 2</div>
+            <div class="pd-hint">Sun-drying yard or mechanical dryer</div>
           </div>
         </div>
-        <div class="process-step-body">
-          <div class="process-step-num">02</div>
-          <div class="process-step-title">Drying</div>
-          <p class="process-step-desc">Paddy dried to ≤14% moisture for optimal milling yield and longer shelf life. Consistent drying reduces broken grain.</p>
+        <div class="pc-body">
+          <div class="pc-step">Step 02</div>
+          <div class="pc-title">Drying</div>
+          <p class="pc-desc">Paddy dried to ≤14% moisture — optimal for milling yield and shelf life. Consistent drying reduces broken grain.</p>
         </div>
       </div>
 
-      <div class="process-step">
-        <div class="process-step-img">
-          <!-- DUMMY: Rice milling machine interior — hulling/whitening/polishing equipment -->
-          <div class="photo-dummy photo-dummy--green" style="width:100%;height:100%">
-            <div class="photo-dummy-icon">⚙️</div>
-            <div class="photo-dummy-label">Step 3</div>
-            <div class="photo-dummy-hint">Rice milling machines — hulling, whitening, polishing equipment</div>
+      <div class="process-card">
+        <div class="pc-img">
+          <!-- DUMMY ▸ Step 3: milling machines -->
+          <div class="photo-dummy dummy-mill" style="width:100%;height:100%;min-height:200px">
+            <div class="pd-icon">⚙️</div>
+            <div class="pd-label">Step 3</div>
+            <div class="pd-hint">Milling equipment — hulling, whitening, polishing</div>
           </div>
         </div>
-        <div class="process-step-body">
-          <div class="process-step-num">03</div>
-          <div class="process-step-title">Milling</div>
-          <p class="process-step-desc">Hulling, whitening and polishing — paddy converted to clean white rice with consistent grain size and appearance.</p>
+        <div class="pc-body">
+          <div class="pc-step">Step 03</div>
+          <div class="pc-title">Milling</div>
+          <p class="pc-desc">Hulling, whitening and polishing converts paddy to clean white rice with consistent grain size and appearance.</p>
         </div>
       </div>
 
-      <div class="process-step">
-        <div class="process-step-img">
-          <!-- DUMMY: Packaging line or sacks being filled/labelled — showing finished product readiness -->
-          <div class="photo-dummy photo-dummy--light" style="width:100%;height:100%">
-            <div class="photo-dummy-icon">📦</div>
-            <div class="photo-dummy-label">Step 4</div>
-            <div class="photo-dummy-hint">Packaging line — sacks being filled, sealed and labelled for delivery</div>
+      <div class="process-card">
+        <div class="pc-img">
+          <!-- DUMMY ▸ Step 4: packaging line -->
+          <div class="photo-dummy dummy-pack" style="width:100%;height:100%;min-height:200px">
+            <div class="pd-icon">📦</div>
+            <div class="pd-label">Step 4</div>
+            <div class="pd-hint">Packaging line — sacks filled and sealed</div>
           </div>
         </div>
-        <div class="process-step-body">
-          <div class="process-step-num">04</div>
-          <div class="process-step-title">Grading &amp; Packaging</div>
-          <p class="process-step-desc">Finished rice graded by size and cleanliness. Packed into 5kg–50kg bags or bulk as specified by buyer.</p>
+        <div class="pc-body">
+          <div class="pc-step">Step 04</div>
+          <div class="pc-title">Grading &amp; Packaging</div>
+          <p class="pc-desc">Finished product graded for size and cleanliness. Packed in 5 kg–50 kg bags or bulk as specified.</p>
         </div>
       </div>
 
@@ -689,97 +633,94 @@ body{top:0!important}
   </div>
 </section>
 
-<!-- ═══ RFQ / CONTACT ═══ -->
-<section class="rfq" id="rfq">
-  <div class="container">
-    <div class="rfq-grid">
-      <div class="rfq-info">
-        <div class="section-tag">Get in Touch</div>
-        <h2>Request a Quote</h2>
-        <div class="divider-amber"></div>
-        <p>Tell us what you need — commodity, volume, grade, packaging and delivery. We'll get back to you within 1 working day.</p>
-        <div class="contact-detail">
-          <div class="contact-row">
-            <span class="contact-row-icon">📍</span>
-            <div><span class="contact-row-label">Address:</span>Jl. Raya Lumajang–Tempeh KM 7, Lumajang 67371, East Java, Indonesia</div>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-icon">📞</span>
-            <div><span class="contact-row-label">Tel:</span><a href="tel:+6233488788" style="color:var(--green)">+62 334 887888</a></div>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-icon">📠</span>
-            <div><span class="contact-row-label">Fax:</span>+62 334 887799</div>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-icon">✉️</span>
-            <div><span class="contact-row-label">Email:</span><a href="mailto:marketing@mustikatama.com" style="color:var(--green)">marketing@mustikatama.com</a></div>
+<!-- ═══ CONTACT / RFQ ═══ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2>Request a Quote</h2>
+      <p>Tell us your commodity, volume, grade and delivery requirements — we'll respond within one working day.</p>
+      <div class="contact-items">
+        <div class="ci">
+          <div class="ci-icon">📍</div>
+          <div class="ci-content">
+            <div class="ci-label">Address</div>
+            Jl. Raya Lumajang–Tempeh KM 7, Lumajang 67371, East Java, Indonesia
           </div>
         </div>
-        <table class="hours-table">
+        <div class="ci">
+          <div class="ci-icon">📞</div>
+          <div class="ci-content">
+            <div class="ci-label">Phone</div>
+            <a href="tel:+6233488788">+62 334 887888</a>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">✉️</div>
+          <div class="ci-content">
+            <div class="ci-label">Email</div>
+            <a href="mailto:marketing@mustikatama.com">marketing@mustikatama.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="hours-box">
+        <table>
           <tr><td>Mon – Fri</td><td>07:00 – 16:00 WIB</td></tr>
           <tr><td>Saturday</td><td>07:00 – 15:00 WIB</td></tr>
           <tr><td>Sunday</td><td>Closed</td></tr>
         </table>
-        <div class="map-embed">
-          <iframe src="https://maps.google.com/maps?q=PT+Mustikatama+Lumajang+East+Java&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="KSMT Location"></iframe>
-        </div>
       </div>
-      <div>
-        <div class="rfq-form-box">
-          <h3 style="font-family:'Merriweather',serif;font-size:1.25rem;font-weight:700;margin-bottom:20px;color:var(--dark)">Send an Enquiry</h3>
-          <form action="https://formsubmit.co/marketing@mustikatama.com" method="POST">
-            <input type="hidden" name="_subject" value="KSMT Product Enquiry">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://ksmt.mustikatama.com/#rfq">
-            <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" name="name" placeholder="Full name" required>
-            </div>
-            <div class="form-group">
-              <label>Company</label>
-              <input type="text" name="company" placeholder="Company / organisation">
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" placeholder="business@email.com" required>
-            </div>
-            <div class="form-group">
-              <label>Product of Interest</label>
-              <select name="product" required>
-                <option value="">Select product…</option>
-                <option>White Rice (Beras Putih)</option>
-                <option>Paddy Grain (Gabah)</option>
-                <option>Red Shallot (Bawang Merah)</option>
-                <option>Multiple products</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Message / Specifications</label>
-              <textarea name="message" placeholder="Volume, grade, packaging, delivery location…" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Enquiry →</button>
-          </form>
-        </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=PT+Mustikatama+Lumajang+East+Java&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="KSMT Location"></iframe>
       </div>
+    </div>
+    <div class="contact-form">
+      <h3>Send an Enquiry</h3>
+      <form action="https://formsubmit.co/marketing@mustikatama.com" method="POST">
+        <input type="hidden" name="_subject" value="KSMT Product Enquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://ksmt.mustikatama.com/#contact">
+        <div class="fg">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Full name" required>
+        </div>
+        <div class="fg">
+          <label>Company</label>
+          <input type="text" name="company" placeholder="Company / organisation">
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="business@email.com" required>
+        </div>
+        <div class="fg">
+          <label>Product of Interest</label>
+          <select name="product" required>
+            <option value="">Select product…</option>
+            <option>White Rice (Beras Putih)</option>
+            <option>Paddy Grain (Gabah)</option>
+            <option>Red Shallot (Bawang Merah)</option>
+            <option>Multiple products</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Requirements</label>
+          <textarea name="message" placeholder="Volume, grade, packaging, delivery location…" required></textarea>
+        </div>
+        <button type="submit" class="btn-form">Send Enquiry</button>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+  <div class="footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-wrap">
-          <img src="/assets/brand/Logo%20Mustikatama%20v2.png" alt="Mustikatama Group">
-          <div>
-            <div class="footer-brand-name">PT Karya Setya Mustikatama</div>
-            <div class="footer-brand-sub">KSMT · Est. 1989</div>
-          </div>
-        </div>
-        <p>Rice milling and agricultural commodity processing in Lumajang, East Java. Supplying distributors, food manufacturers and institutional buyers across Indonesia.</p>
-        <p style="margin-top:12px">Jl. Raya Lumajang–Tempeh KM 7<br>Lumajang 67371, East Java, Indonesia</p>
+        <img src="/assets/brand/Logo%20Mustikatama%20v2.png" alt="Mustikatama Group">
+        <div class="footer-brand-name">PT Karya Setya Mustikatama</div>
+        <div class="footer-brand-sub">KSMT · Est. 1989 · Lumajang, East Java</div>
+        <p>Rice milling and agricultural commodity processing. Supplying distributors, food manufacturers and institutional buyers across Indonesia.</p>
       </div>
       <div class="footer-col">
         <h4>Products</h4>
@@ -792,36 +733,48 @@ body{top:0!important}
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">About KSMT</a></li>
+          <li><a href="#story">About KSMT</a></li>
           <li><a href="#process">Our Process</a></li>
-          <li><a href="#rfq">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="https://mustikatama.com" target="_blank" rel="noopener">Mustikatama Group ↗</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 PT Karya Setya Mustikatama. All rights reserved.</span>
-      <span class="footer-group-link">Part of <a href="https://mustikatama.com" target="_blank" rel="noopener">Mustikatama Group</a></span>
+      <a href="https://mustikatama.com" target="_blank" rel="noopener">Part of Mustikatama Group</a>
     </div>
   </div>
 </footer>
 
 <script>
-// ── NAV TOGGLE ──
-document.getElementById('menuBtn').addEventListener('click', function(){
+// Nav toggle
+document.getElementById('menuBtn').addEventListener('click',function(){
   document.getElementById('mobileMenu').classList.toggle('open');
 });
 
-// ── LANGUAGE SELECTOR ──
+// Product nav active state on scroll
+const pnavItems = document.querySelectorAll('.pnav-item[href^="#"]');
+const sections = ['rice','gabah','onion'];
+window.addEventListener('scroll',function(){
+  const y = window.scrollY + 180;
+  sections.forEach(function(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    if(y >= el.offsetTop && y < el.offsetTop + el.offsetHeight){
+      pnavItems.forEach(function(a){ a.classList.remove('active'); });
+      const active = document.querySelector('.pnav-item[href="#'+id+'"]');
+      if(active) active.classList.add('active');
+    }
+  });
+});
+
+// Language selector
 function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:'en',
-    includedLanguages:'ja,zh-CN,ko,es',
-    autoDisplay:false
-  },'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ja,zh-CN,ko,es',autoDisplay:false},'google_translate_element');
 }
-function setLang(code, label){
-  document.querySelectorAll('.topbar-lang').forEach(b => b.classList.remove('active'));
+function setLang(code,label){
+  document.querySelectorAll('.t-lang').forEach(b=>b.classList.remove('active'));
   event.currentTarget.classList.add('active');
   if(!code){
     document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
@@ -831,24 +784,23 @@ function setLang(code, label){
     location.reload();
     return;
   }
-  const combo = document.querySelector('.goog-te-combo');
-  if(combo){ combo.value=code; combo.dispatchEvent(new Event('change')); }
-  localStorage.setItem('ksmt_lang', code);
-  localStorage.setItem('ksmt_lang_label', label);
+  const combo=document.querySelector('.goog-te-combo');
+  if(combo){combo.value=code;combo.dispatchEvent(new Event('change'));}
+  localStorage.setItem('ksmt_lang',code);
+  localStorage.setItem('ksmt_lang_label',label);
 }
-// Restore language on load
-window.addEventListener('load', function(){
-  const saved = localStorage.getItem('ksmt_lang');
-  const savedLabel = localStorage.getItem('ksmt_lang_label');
+window.addEventListener('load',function(){
+  const saved=localStorage.getItem('ksmt_lang');
+  const savedLabel=localStorage.getItem('ksmt_lang_label');
   if(saved){
     setTimeout(function(){
-      const combo = document.querySelector('.goog-te-combo');
-      if(combo){ combo.value=saved; combo.dispatchEvent(new Event('change')); }
-      document.querySelectorAll('.topbar-lang').forEach(function(b){
+      const combo=document.querySelector('.goog-te-combo');
+      if(combo){combo.value=saved;combo.dispatchEvent(new Event('change'));}
+      document.querySelectorAll('.t-lang').forEach(function(b){
         if(b.textContent.trim().includes(savedLabel)) b.classList.add('active');
         else b.classList.remove('active');
       });
-    }, 800);
+    },800);
   }
 });
 </script>
